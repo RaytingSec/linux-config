@@ -6,4 +6,11 @@ These are the settings (and a template) I use for various programs, primarily on
 
 ### Contents
 
-Self-explanatory
+Files for:
+
+- Eclipse (Gnome shorcut)
+- cowsay (fortune | cowsay -f is fun, alright?)
+- Sublime
+- Readme
+- Bash
+- VIM

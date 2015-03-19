@@ -11,7 +11,7 @@ DIVIDER=$WHITE':'
 TIME=$GREEN'\t'
 DIR=$BLUE'\w'
 END=$NORMAL'\$ '
-USER=$GREEN'\u@\H'
+#USR=$GREEN'\u@\H'
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -129,5 +129,5 @@ if ! shopt -oq posix; then
 fi
 
 # Welcome Text and MOTD
-fortune | cowsay -f fox
+(echo -e "Hi $USER. The uptime for $(hostname) is$(uptime)\n"; fortune) | cowsay -f fox
 printf "\n"
