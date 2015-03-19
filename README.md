@@ -6,8 +6,4 @@ These are the settings (and a template) I use for various programs, primarily on
 
 ### Contents
 
-Settings for: 
-- Bash
-- Eclipse (shortcut for Gnome)
-- Sublime
-- VIM
+Self-explanatory
