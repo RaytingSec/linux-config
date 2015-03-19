@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Eclipse
+Comment=Eclipse Java IDE
+Icon=/home/rayting/eclipse/icon.xpm
+Exec=/home/rayting/eclipse/eclipse
+Terminal=false
+Categories=Development;IDE;Java
