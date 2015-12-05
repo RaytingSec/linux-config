@@ -1,14 +1,14 @@
 {
-    "font_face": "Hack",
-    "font_size": 12,
-    "indent_subsequent_lines": true,
-    "rulers":
-    [
-        80
-    ],
-    "smart_indent": true,
-    "spell_check": false,
-    "tab_size": 4,
-    "translate_tabs_to_spaces": true,
-    "word_wrap": "true"
+	"font_face": "Hack",
+	"font_size": 12,
+	"indent_subsequent_lines": false,
+	"rulers":
+	[
+		80
+	],
+	"smart_indent": true,
+	"spell_check": false,
+	"tab_size": 4,
+	"translate_tabs_to_spaces": true,
+	"word_wrap": "true"
 }
