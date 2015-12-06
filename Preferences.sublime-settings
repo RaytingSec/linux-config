@@ -1,7 +1,6 @@
 {
     "font_face": "Hack",
     "font_size": 12,
-    "indent_subsequent_lines": false,
     "rulers":
     [
         80
