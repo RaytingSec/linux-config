@@ -1,6 +1,7 @@
 # ssh
 alias ssh-raydar='ssh rayting@raydar.net'
 alias ssh-lamp='ssh 192.168.25.140'
+alias ssh-dev='ssh 192.168.25.148'
 
 # ls
 alias ll='ls -alhF'
