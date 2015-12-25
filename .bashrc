@@ -120,5 +120,6 @@ if ! shopt -oq posix; then
 fi
 
 # Welcome Text and MOTD
-(echo -e "Hi $USER. The uptime for $(hostname) is:\n$(uptime)\n"; fortune) | cowsay -W80 -n -f fox
-printf "\n"
+if [ -f ~/.bash_motd ]; then
+    . ~/.bash_motd
+fi
