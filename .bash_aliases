@@ -5,8 +5,7 @@ alias ssh-dev='ssh 192.168.25.148'
 
 # ls
 alias ll='ls -alhF'
-alias la='ls -A'
-alias l='ls -CF'
+alias l='ls -aCF'
 
 # Git
 alias git-prettylog='git log --graph --decorate --pretty=oneline --abbrev-commit'
