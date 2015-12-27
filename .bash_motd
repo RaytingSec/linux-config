@@ -1,4 +1,4 @@
 FULLNAME=$(getent passwd $USER | cut -d ':' -f 5)
 
-(echo -e "Hi $FULLNAME. The uptime for $(hostname) is:\n$(uptime)\n"; fortune) | cowsay -W75 -n -f fox
+(echo -e "Hi $FULLNAME. The uptime for $(hostname) is:\n$(uptime)\n"; fortune) | cowsay -W70 -n -f fox
 printf "\n"
