@@ -1,11 +1,11 @@
 # ssh
 alias ssh-raydar='ssh rayting@raydar.net'
-alias ssh-lamp='ssh 192.168.25.140'
+alias ssh-lamp='ssh 192.168.120.130'
 alias ssh-dev='ssh 192.168.25.148'
 
 # ls
 alias ll='ls -alhF'
-alias l='ls -aCF'
+alias l='ls -ACF'
 
 # Git
 alias git-prettylog='git log --graph --decorate --pretty=oneline --abbrev-commit'
