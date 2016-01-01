@@ -6,6 +6,11 @@ alias ssh-dev='ssh 192.168.25.148'
 # ls
 alias ll='ls -alhF'
 alias l='ls -ACF'
+cdl () { cd "$@" && l; }
+
+
+# grep
+alias gref='grep -Rin'
 
 # Git
 alias git-prettylog='git log --graph --decorate --pretty=oneline --abbrev-commit'
