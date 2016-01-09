@@ -6,8 +6,7 @@ alias ssh-dev='ssh 192.168.25.148'
 # ls
 alias ll='ls -alhF'
 alias l='ls -ACF'
-cdl () { cd "$@" && l; }
-
+cl () { cd "$@" && l; }
 
 # grep
 alias gref='grep -Rin'
@@ -18,7 +17,7 @@ alias git-commit='git add -A && git commit && git push'
 
 # Misc
 alias yiff='sudo -E '
-alias update='sudo apt-get update && sudo apt-get upgrade; alert'
+alias update='sudo apt-get update && sudo apt-get -y upgrade; alert'
 
 # Alias from Debian .bashrc
 # Add an "alert" alias for long running commands.  Use like so:
