@@ -11,7 +11,7 @@ DIVIDER=$WHITE':'
 TIME=$GREEN'\t'
 DIR=$BLUE'\w'
 END=$NORMAL'\$ '
-USR=$RED'\u@\H'
+USR=$BLUE'\u@\H'
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
