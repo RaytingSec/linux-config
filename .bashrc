@@ -11,7 +11,7 @@ DIVIDER=$WHITE':'
 TIME=$GREEN'\t'
 DIR=$BLUE'\w'
 END=$NORMAL'\$ '
-#USR=$GREEN'\u@\H'
+USR=$RED'\u@\H'
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -72,7 +72,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}'$TIME$DIVIDER$DIR$END
+    PS1='${debian_chroot:+($debian_chroot)}'$USR$DIVIDER$TIME$DIVIDER$DIR$END
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
