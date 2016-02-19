@@ -4,7 +4,7 @@ alias ssh-lamp='ssh 172.16.159.130'
 alias ssh-dev='ssh 172.16.159.129'
 
 # ls
-alias ll='ls -alhF'
+alias ll='ls -AlhF'
 alias l='ls -ACF'
 cl () { cd "$@" && l; }
 
