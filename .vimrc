@@ -1,6 +1,7 @@
 " General settings
 syntax on
-color evening
+color molokai
+let g:molokai_original = 1
 set number
 set ruler
 
