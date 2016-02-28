@@ -6,12 +6,14 @@ RED="\[\033[01;31m\]"
 YELLOW="\[\033[01;33m\]"
 GREEN="\[\033[01;32m\]"
 BLUE="\[\033[01;34m\]"
-DIVIDER=$WHITE':'
 # Modules
-TIME=$GREEN'\t'
+STARTBRACKET=$GREEN'[ '
+ENDBRACKET=$GREEN' ]'
+DIVIDER=$NORMAL'  '
+USR=$BLUE'\u@\H'
+TIME=$BLUE'\A'
 DIR=$BLUE'\w'
 END=$NORMAL'\$ '
-USR=$BLUE'\u@\H'
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -72,7 +74,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}'$TIME$DIVIDER$DIR$END
+    PS1='${debian_chroot:+($debian_chroot)}'$STARTBRACKET$USR$DIVIDER$DIR$ENDBRACKET$END
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
