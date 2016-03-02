@@ -1,7 +1,10 @@
+# Variables
+VM_DEV=172.16.159.131
+VM_LAMP=172.16.159.130
 # ssh
 alias ssh-raydar='ssh rayting@raydar.net'
-alias ssh-lamp='ssh 172.16.159.130'
-alias ssh-dev='ssh 172.16.159.131'
+alias ssh-lamp='ssh $VM_LAMP'
+alias ssh-dev='ssh $VM_DEV'
 
 # ls
 alias ll='ls -AlhF'
