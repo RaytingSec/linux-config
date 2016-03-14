@@ -1,9 +1,13 @@
 " General settings
 syntax on
-color molokai
-let g:molokai_original = 1
 set number
 set ruler
+
+" Theme
+color molokai
+let g:molokai_original = 1
+set t_Co=256
+let g:rehash256 = 1
 
 " Tabs
 set tabstop=4

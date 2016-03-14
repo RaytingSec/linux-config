@@ -1,6 +1,6 @@
 # Variables
-VM_DEV=172.16.159.131
-VM_LAMP=172.16.159.130
+VM_DEV=172.16.169.129
+VM_LAMP=172.16.169.131
 # ssh
 alias ssh-raydar='ssh rayting@raydar.net'
 alias ssh-lamp='ssh $VM_LAMP'
@@ -13,6 +13,10 @@ cl () { cd "$@" && l; }
 
 # grep
 alias gref='grep -Rin'
+
+# Coding
+alias py3='python 3'
+alias gpp='g++ -std=c++11'
 
 # Git
 alias git-prettylog='git log --graph --decorate --pretty=oneline --abbrev-commit'

@@ -74,7 +74,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}'$STARTBRACKET$USR$DIVIDER$DIR$ENDBRACKET$END
+    PS1='${debian_chroot:+($debian_chroot)}'$STARTBRACKET$TIME$DIVIDER$USR$DIVIDER$DIR$ENDBRACKET$END
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
