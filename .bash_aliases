@@ -15,7 +15,7 @@ cl () { cd "$@" && l; }
 alias gref='grep -Rin'
 
 # Coding
-alias py3='python 3'
+alias py3='python3 '
 alias gpp='g++ -std=c++11'
 
 # Git
