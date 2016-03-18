@@ -2,7 +2,10 @@
 syntax on
 set number
 set ruler
-
+set cursorline
+set cursorcolumn
+set ignorecase
+set smartcase
 " Theme
 color molokai
 let g:molokai_original = 1
