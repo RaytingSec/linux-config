@@ -1,6 +1,10 @@
 {
 	"font_face": "Hack",
 	"font_size": 11,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
 	"rulers":
 	[
 		80
