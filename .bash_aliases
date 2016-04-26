@@ -10,7 +10,7 @@ alias ssh-dev='ssh $VM_DEV'
 alias ssh-sec='ssh $VM_SEC'
 
 # ls
-alias ll='ls -AlhF'
+alias ll='ls -alhF'
 alias l='ls -ACF'
 cl () { cd "$@" && l; }
 
