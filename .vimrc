@@ -3,7 +3,7 @@ syntax on
 set number
 set ruler
 
-set mouse=a
+" set mouse=a
 
 set cursorline
 set cursorcolumn
