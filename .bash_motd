@@ -1,4 +1,5 @@
-FULLNAME=$(getent passwd $USER | cut -d ':' -f 5)
+NAME=$(getent passwd $USER | cut -d ':' -f 5)
+FULL_NAME=${NAME//','}
 
-(echo -e "Hi $FULLNAME. The uptime for $(hostname) is:\n$(uptime)\n"; fortune) | cowsay -W80 -n -f fox
+(echo -e "Hi $FULL_NAME. The uptime for $(hostname) is:\n$(uptime)\n"; fortune) | cowsay -W80 -n -f fox
 printf "\n"
