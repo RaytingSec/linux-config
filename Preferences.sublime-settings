@@ -1,17 +1,17 @@
 {
-	"font_face": "Hack",
-	"font_size": 11,
-	"ignored_packages":
-	[
-		"Vintage"
-	],
-	"rulers":
-	[
-		80
-	],
-	"smart_indent": true,
-	"spell_check": false,
-	"tab_size": 4,
-	"translate_tabs_to_spaces": true,
-	"word_wrap": "true"
+    "font_face": "Hack",
+    "font_size": 10.5,
+    "ignored_packages":
+    [
+        "Vintage"
+    ],
+    "rulers":
+    [
+        80
+    ],
+    "smart_indent": true,
+    "spell_check": false,
+    "tab_size": 4,
+    "translate_tabs_to_spaces": true,
+    "word_wrap": "true"
 }
