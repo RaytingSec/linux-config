@@ -1,23 +1,89 @@
 [KDE Keyboard Layout Switcher][Global Shortcuts]
+Switch to Next Keyboard Layout=Ctrl+Alt+K
+{048568a7-158b-4c9b-9224-a7f87549f095}=Ctrl+Print
+{1d9ad515-5e41-4e8a-94be-cb901b52f29f}=Shift+Print
+{868ef1a9-d79d-4789-a573-3d8dc23011fe}=Print
+{9da6ff0c-86b3-4773-a595-02faec852746}=Ctrl+Alt+T
+{d03619b6-9b3c-48cc-9d9c-a2aadb485550}=none
+
+[amarok][Global Shortcuts]
+decreaseVolume=none
+increaseVolume=Meta++
+loveTrack=Meta+L
+mute=Meta+M
+next=none
+play_pause=none
+playlist_add=Meta+A
+prev=none
+rate1=none
+rate2=none
+rate3=Meta+3
+rate4=Meta+4
+rate5=Meta+5
+replay=none
+seek_backward_medium=Meta+Shift+-
+seek_forward_medium=Meta+Shift++
+showNotificationPopup=Meta+O
+skipTrack=none
+stop=none
+stop_after_current=Meta+Shift+V
+toggleMainWindow=none
+
+[kaccess][Global Shortcuts]
+Toggle Screen Reader On and Off=Meta+Alt+S
+
+[kded5][Global Shortcuts]
+Decrease Keyboard Brightness=Keyboard Brightness Down
+Decrease Screen Brightness=Monitor Brightness Down
+Disable Touchpad=Touchpad Off
+Enable Touchpad=Touchpad On
+Hibernate=Hibernate
+Increase Keyboard Brightness=Keyboard Brightness Up
+Increase Screen Brightness=Monitor Brightness Up
+PowerOff=Power Off
+Show System Activity=Ctrl+Esc
+Sleep=Sleep
+Toggle Keyboard Backlight=Keyboard Light On/Off
+Toggle Touchpad=Touchpad Toggle
+display=Display
+
+[kmix][Global Shortcuts]
+decrease_volume=Volume Down
+increase_volume=Volume Up
+mute=Volume Mute
+
+[krunner][Global Shortcuts]
+run command=Meta+2; Alt+F2; Search
+run command on clipboard contents=Alt+Shift+F2
+
+[ksmserver][Global Shortcuts]
+Halt Without Confirmation=Ctrl+Alt+Shift+PgDown
+Lock Session=Ctrl+Alt+L; Screensaver
+Log Out=Ctrl+Alt+Del
+Log Out Without Confirmation=Ctrl+Alt+Shift+Del
+Reboot Without Confirmation=Ctrl+Alt+Shift+PgUp
+
+[ktorrent][Global Shortcuts]
+queue_suspend=Alt+Shift+P
+show_kt=Alt+Shift+T
+
+[kwin][Global Shortcuts]
 Activate Window Demanding Attention=Ctrl+Alt+A
 Decrease Opacity=none
 Expose=Ctrl+F9
 ExposeAll=Ctrl+F10; Launch (C)
 ExposeClass=Ctrl+F7
-Halt Without Confirmation=Ctrl+Alt+Shift+PgDown
+FlipSwitchAll=none
+FlipSwitchCurrent=none
 Increase Opacity=none
 Invert Screen Colors=none
 Kill Window=Ctrl+Alt+Esc
-Lock Session=Ctrl+Alt+L; Screensaver
-Log Out=Ctrl+Alt+Del
-Log Out Without Confirmation=Ctrl+Alt+Shift+Del
 MoveMouseToCenter=Meta+F6
 MoveMouseToFocus=Meta+F5
 MoveZoomDown=none
 MoveZoomLeft=none
 MoveZoomRight=none
 MoveZoomUp=none
-Reboot Without Confirmation=Ctrl+Alt+Shift+PgUp
 Remove Window From Group=none
 Setup Window Shortcut=none
 Show Desktop=none
@@ -52,7 +118,6 @@ Switch to Desktop 7=none
 Switch to Desktop 8=none
 Switch to Desktop 9=none
 Switch to Next Desktop=none
-Switch to Next Keyboard Layout=Ctrl+Alt+K
 Switch to Next Screen=none
 Switch to Previous Desktop=none
 Switch to Previous Screen=none
@@ -151,63 +216,6 @@ WindowGeometry=Ctrl+Shift+F11
 view_actual_size=Meta+0
 view_zoom_in=Meta+=
 view_zoom_out=Meta+-
-{048568a7-158b-4c9b-9224-a7f87549f095}=Ctrl+Print
-{1d9ad515-5e41-4e8a-94be-cb901b52f29f}=Shift+Print
-{868ef1a9-d79d-4789-a573-3d8dc23011fe}=Print
-{9da6ff0c-86b3-4773-a595-02faec852746}=Ctrl+Alt+T
-{d03619b6-9b3c-48cc-9d9c-a2aadb485550}=none
-
-[amarok][Global Shortcuts]
-decreaseVolume=none
-increaseVolume=Meta++
-loveTrack=Meta+L
-mute=Meta+M
-next=none
-play_pause=none
-playlist_add=Meta+A
-prev=none
-rate1=none
-rate2=none
-rate3=Meta+3
-rate4=Meta+4
-rate5=Meta+5
-replay=none
-seek_backward_medium=Meta+Shift+-
-seek_forward_medium=Meta+Shift++
-showNotificationPopup=Meta+O
-skipTrack=none
-stop=none
-stop_after_current=Meta+Shift+V
-toggleMainWindow=none
-
-[kaccess][Global Shortcuts]
-Toggle Screen Reader On and Off=Meta+Alt+S
-
-[kcm_touchpad][Global Shortcuts]
-Disable Touchpad=Touchpad Off
-Enable Touchpad=Touchpad On
-Toggle Touchpad=Touchpad Toggle
-
-[kded5][Global Shortcuts]
-Decrease Keyboard Brightness=Keyboard Brightness Down
-Decrease Screen Brightness=Monitor Brightness Down
-Hibernate=Hibernate
-Increase Keyboard Brightness=Keyboard Brightness Up
-Increase Screen Brightness=Monitor Brightness Up
-PowerOff=Power Off
-Show System Activity=Ctrl+Esc
-Sleep=Sleep
-Toggle Keyboard Backlight=Keyboard Light On/Off
-display=Display
-
-[kmix][Global Shortcuts]
-decrease_volume=Volume Down
-increase_volume=Volume Up
-mute=Volume Mute
-
-[krunner][Global Shortcuts]
-run command=Meta+2; Alt+F2; Search
-run command on clipboard contents=Alt+Shift+F2
 
 [mediacontrol][Global Shortcuts]
 nextmedia=Media Next
