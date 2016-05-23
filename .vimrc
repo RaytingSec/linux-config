@@ -2,25 +2,25 @@
 syntax on
 set number
 set ruler
-
-" set mouse=a
-
 set cursorline
 set cursorcolumn
-
-set ignorecase
-set smartcase
+set so=999 " centers the cursor when possible
+" set mouse=a
 
 " Theme
 color molokai
 let g:molokai_original = 1
 set t_Co=256
-let g:rehash256 = 1
+"let g:rehash256 = 1
 
 " Tabs
 set tabstop=4
 set shiftwidth=4
 set expandtab
+
+" Search case
+set ignorecase
+set smartcase
 
 " Arrowkeys
 " Sets movement to match visual and not physical line location
