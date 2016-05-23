@@ -1,6 +1,6 @@
 # Variables
-VM_DEV=172.16.169.129
-VM_LAMP=172.16.169.131
+VM_DEV=172.16.145.140
+VM_LAMP=172.16.145.129
 VM_SEC=172.16.169.134
 
 # ssh
@@ -27,7 +27,7 @@ alias git-commit='git add -A && git commit && git push'
 
 # Misc
 alias yiff='sudo -E '
-alias update='sudo apt-get update && sudo apt-get -y upgrade; alert'
+alias update='sudo apt update && apt list --upgradable; alert'
 
 # Alias from Debian .bashrc
 # Add an "alert" alias for long running commands.  Use like so:
