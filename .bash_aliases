@@ -24,7 +24,7 @@ alias gpp='g++ -std=c++11'
 # Git
 alias git-prettylog='git log --graph --decorate --pretty=oneline --abbrev-commit'
 alias git-commit='git add -A && git commit && git push'
-
+alias git-update='git remote update'
 # Misc
 alias yiff='sudo -E '
 alias update='sudo apt update && apt list --upgradable; alert'
