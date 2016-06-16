@@ -8,9 +8,11 @@ These are the settings, templates, and other files I may use for various program
 
 Files for:
 
-- Eclipse (Gnome shorcut)
+- Eclipse (Gnome program shorcut)
+- Intellij
+- KDE
 - cowsay (fortune | cowsay -f is fun, alright?)
 - Sublime
-- Readme
 - Bash
 - VIM
+- Various other programs' config files
