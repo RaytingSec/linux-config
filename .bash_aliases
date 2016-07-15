@@ -24,10 +24,11 @@ alias gpp='g++ -std=c++11'
 # Git
 alias git-prettylog='git log --graph --decorate --pretty=oneline --abbrev-commit'
 alias git-commit='git add -A && git commit && git push'
-alias git-update='git remote update'
+# alias git-update=''
+
 # Misc
 alias yiff='sudo -E '
-alias update='sudo apt update && apt list --upgradable; alert'
+# alias update='sudo apt update && apt list --upgradable; alert'
 
 # Alias from Debian .bashrc
 # Add an "alert" alias for long running commands.  Use like so:
