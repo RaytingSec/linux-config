@@ -1,10 +1,10 @@
 # Variables
-VM_DEV=172.16.145.140
-VM_LAMP=172.16.145.129
-VM_SEC=172.16.145.141
+VM_LAMP=172.16.80.129
+VM_DEV=172.16.80.130
+VM_SEC=172.16.80.133
 
 # ssh
-alias ssh-raydar='ssh rayting@raydar.net'
+alias ssh-raydar='ssh raydar.net'
 alias ssh-lamp='ssh $VM_LAMP'
 alias ssh-dev='ssh $VM_DEV'
 alias ssh-sec='ssh samurai@$VM_SEC'
