@@ -1,0 +1,6 @@
+# Git stuff
+.git*
+
+# Python stuff
+__pycache__
+*.pyc
