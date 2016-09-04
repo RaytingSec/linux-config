@@ -10,7 +10,7 @@ alias ssh-dev='ssh $VM_DEV'
 alias ssh-sec='ssh samurai@$VM_SEC'
 
 # ls
-alias ll='ls -alhF'
+alias ll='ls -alhF --group-directories-first'
 alias l='ls -ACF'
 cl () { cd "$@" && l; }
 
@@ -23,7 +23,8 @@ alias gpp='g++ -std=c++11'
 
 # Git
 alias git-prettylog='git log --graph --decorate --pretty=oneline --abbrev-commit'
-alias git-commit='git add -A && git commit && git push'
+alias git-commit='git add -A && git commit -m'
+alias git-commit-push='git add -A && git commit && git push'
 # alias git-update=''
 
 # Misc
