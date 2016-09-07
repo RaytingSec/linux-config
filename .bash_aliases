@@ -28,6 +28,7 @@ alias git-commit-push='git add -A && git commit && git push'
 # alias git-update=''
 
 # Misc
+alias todaysnotes='py3 $HOME/code/Scripts/Python/notes.py'
 alias yiff='sudo -E '
 # alias update='sudo apt update && apt list --upgradable; alert'
 
