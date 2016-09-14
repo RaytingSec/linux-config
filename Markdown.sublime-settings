@@ -2,5 +2,6 @@
     "color_scheme": "Packages/MarkdownEditing/MarkdownEditor-Dark.tmTheme",
     "line_numbers": true,
     "spell_check": true,
-    "draw_centered": false
+    "draw_centered": false,
+    "wrap_width": 0
 }
