@@ -1,0 +1,4 @@
+[
+    { "keys": ["ctrl+alt+shift+s"], "command": "save_all" },
+    { "keys": ["ctrl+k"], "command": "build" }
+]
