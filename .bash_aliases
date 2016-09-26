@@ -1,7 +1,7 @@
 # Variables
 VM_LAMP=172.16.80.129
 VM_DEV=172.16.80.130
-VM_SEC=172.16.80.133
+VM_SEC=172.16.80.139
 
 # ssh
 alias ssh-raydar='ssh raydar.net'
@@ -10,15 +10,16 @@ alias ssh-dev='ssh $VM_DEV'
 alias ssh-sec='ssh samurai@$VM_SEC'
 
 # ls
-alias ll='ls -alhF --group-directories-first'
+alias ll='ls -AlhF --group-directories-first'
 alias l='ls -ACF'
 cl () { cd "$@" && l; }
+findname () { find . -name "*$@*"; }
 
 # grep
-alias gref='grep -Rin'
+alias gref='grep -Rina'
 
 # Coding
-alias py3='python3 '
+alias py3='python3'
 alias gpp='g++ -std=c++11'
 
 # Git
@@ -28,9 +29,10 @@ alias git-commit-push='git add -A && git commit && git push'
 # alias git-update=''
 
 # Misc
-alias todaysnotes='py3 $HOME/code/Scripts/Python/notes.py'
-alias yiff='sudo -E '
+alias yiff='sudo -E'
 # alias update='sudo apt update && apt list --upgradable; alert'
+alias todaysnotes='py3 $HOME/py/notes.py'
+alias diff='colordiff'
 
 # Alias from Debian .bashrc
 # Add an "alert" alias for long running commands.  Use like so:
