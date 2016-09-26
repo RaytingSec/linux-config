@@ -32,7 +32,7 @@ alias git-commit-push='git add -A && git commit && git push'
 alias yiff='sudo -E'
 # alias update='sudo apt update && apt list --upgradable; alert'
 alias todaysnotes='py3 $HOME/py/notes.py'
-alias diff='colordiff'
+alias diff='colordiff -u'
 
 # Alias from Debian .bashrc
 # Add an "alert" alias for long running commands.  Use like so:
