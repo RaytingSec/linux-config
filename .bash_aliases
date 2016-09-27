@@ -24,6 +24,7 @@ alias gpp='g++ -std=c++11'
 
 # Git
 alias git-prettylog='git log --graph --decorate --pretty=oneline --abbrev-commit'
+alias git-update='git remote -v update'
 alias git-commit='git add -A && git commit -m'
 alias git-commit-push='git add -A && git commit && git push'
 # alias git-update=''
