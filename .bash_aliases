@@ -8,6 +8,7 @@ alias ssh-raydar='ssh raydar.net'
 alias ssh-lamp='ssh $VM_LAMP'
 alias ssh-dev='ssh $VM_DEV'
 alias ssh-sec='ssh samurai@$VM_SEC'
+alias ssh-mapr='ssh sudo@172.16.80.138'
 
 # ls
 alias ll='ls -AlhF --group-directories-first'
