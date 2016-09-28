@@ -11,7 +11,7 @@ alias ssh-sec='ssh samurai@$VM_SEC'
 alias ssh-mapr='ssh sudo@172.16.80.138'
 
 # ls
-alias ll='ls -AlhF --group-directories-first'
+alias ll='ls -alhF --group-directories-first'
 alias l='ls -ACF'
 cl () { cd "$@" && l; }
 findname () { find . -name "*$@*"; }
