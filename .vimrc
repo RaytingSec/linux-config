@@ -18,9 +18,10 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-" Search case
+" Search
 set ignorecase
 set smartcase
+set hlsearch
 
 " Arrowkeys
 " Sets movement to match visual and not physical line location
