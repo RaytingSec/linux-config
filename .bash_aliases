@@ -14,7 +14,6 @@ alias ssh-mapr='ssh mapr@172.16.80.138'
 alias ll='ls -alhF' # --group-directories-first'
 alias l='ls -ACF'
 cl () { cd "$@" && l; }
-findname () { find $(pwd) ! -readable -prune -o -iname "*$@*" -print; }
 
 # grep
 alias gref='grep -Rina'
@@ -35,6 +34,7 @@ alias yiff='sudo -E'
 # alias update='sudo apt update && apt list --upgradable; alert'
 alias todaysnotes='py3 $HOME/py/notes.py'
 alias diff='colordiff -u'
+findname () { find $(pwd) ! -readable -prune -o -iname "*$@*" -print; }
 
 # Alias from Debian .bashrc
 # Add an "alert" alias for long running commands.  Use like so:
