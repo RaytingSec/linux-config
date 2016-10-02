@@ -8,13 +8,13 @@ alias ssh-raydar='ssh raydar.net'
 alias ssh-lamp='ssh $VM_LAMP'
 alias ssh-dev='ssh $VM_DEV'
 alias ssh-sec='ssh samurai@$VM_SEC'
-alias ssh-mapr='ssh sudo@172.16.80.138'
+alias ssh-mapr='ssh mapr@172.16.80.138'
 
 # ls
-alias ll='ls -alhF --group-directories-first'
+alias ll='ls -alhF' # --group-directories-first'
 alias l='ls -ACF'
 cl () { cd "$@" && l; }
-findname () { find . -name "*$@*"; }
+findname () { find $(pwd) ! -readable -prune -o -iname "*$@*" -print; }
 
 # grep
 alias gref='grep -Rina'
