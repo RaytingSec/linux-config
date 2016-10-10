@@ -2,13 +2,14 @@
 VM_LAMP=172.16.80.129
 VM_DEV=172.16.80.130
 VM_SEC=172.16.80.139
+VM_MAPR=172.16.80.138
 
 # ssh
 alias ssh-raydar='ssh raydar.net'
 alias ssh-lamp='ssh $VM_LAMP'
 alias ssh-dev='ssh $VM_DEV'
 alias ssh-sec='ssh samurai@$VM_SEC'
-alias ssh-mapr='ssh mapr@172.16.80.138'
+alias ssh-mapr='ssh mapr@$VM_MAPR'
 
 # ls
 alias ll='ls -alhF' # --group-directories-first'
