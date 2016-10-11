@@ -1,6 +1,6 @@
 NAME=$(getent passwd $USER | cut -d ':' -f 5)
 FULL_NAME=${NAME//','}
 
-(echo -e "Hi $FULL_NAME. The uptime for $(hostname) is:\n$(uptime)\n"; fortune -n 320) | cowsay -W80 -n -f fox
+(echo -e "Hi $FULL_NAME. The uptime for $(hostname) is:\n$(uptime)\n"; fortune) | cowsay -W80 -n -f rayting
 # | lolcat -p 9 -F .3
 printf "\n"
