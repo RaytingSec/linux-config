@@ -2,7 +2,7 @@
 VM_LAMP=172.16.80.129
 VM_DEV=172.16.80.130
 VM_SEC=172.16.80.139
-VM_MAPR=172.16.80.138
+VM_MAPR=172.16.80.128
 
 # ssh
 alias ssh-raydar='ssh raydar.net'
@@ -12,7 +12,7 @@ alias ssh-sec='ssh samurai@$VM_SEC'
 alias ssh-mapr='ssh mapr@$VM_MAPR'
 
 # ls
-alias ll='ls -alhF' # --group-directories-first'
+alias ll='ls -alhF --group-directories-first'
 alias l='ls -ACF'
 cl () { cd "$@" && l; }
 

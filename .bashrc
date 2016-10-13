@@ -1,24 +1,37 @@
 # User additions
 # Colors
 NORMAL="\[\033[00m\]"
-WHITE="\[\033[01;37m\]"
-RED="\[\033[01;31m\]"
-YELLOW="\[\033[01;33m\]"
-GREEN="\[\033[01;32m\]"
-BLUE="\[\033[01;34m\]"
+WHITE="\[\033[1;37m\]"
+RED="\[\033[1;31m\]"
+YELLOW="\[\033[1;33m\]"
+NEONGREEN="\[\033[1;38;5;10m\]"
+GREEN="\[\033[1;38;5;34m\]"
+BLUE="\[\033[1;38;5;33m\]"
+GRAY="\[\033[1;38;5;244m\]"
+
 # Modules
-STARTBRACKET=$GREEN'[ '
-ENDBRACKET=$GREEN' ]'
+STARTBRACKET=$NEONGREEN'[ '
+ENDBRACKET=$NEONGREEN' ]'
 DIVIDER=$NORMAL' '
 USR=$BLUE'\u@\H'
-TIME=$BLUE'\A'
-DIR=$BLUE'\w'
+TIME=$GRAY'\t'
+DIR=$GREEN'\w'
 END=$NORMAL'\$ '
+
+# Git stuff
+GIT=$RED'$(__git_ps1)'
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWSTASHSTATE=1
+GIT_PS1_SHOWUNTRACKEDFILES=1
+# Explicitly unset color (default anyhow). Use 1 to set it.
+# GIT_PS1_SHOWCOLORHINTS=
+GIT_PS1_DESCRIBE_STYLE="branch"
+GIT_PS1_SHOWUPSTREAM="auto git"
 
 # make less more friendly for non-text input files, see lesspipe(1)
 # [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-PS1=$STARTBRACKET$TIME$DIVIDER$USR$DIVIDER$DIR$ENDBRACKET'\n'$END
+PS1=$STARTBRACKET$TIME$DIVIDER$USR$DIVIDER$DIR$GIT$ENDBRACKET'\n'$END
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
