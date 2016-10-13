@@ -5,12 +5,17 @@
 	],
 	"installed_packages":
 	[
-		"Agila Theme",
-		"Anaconda",
-		"GitGutter",
-		"MarkdownEditing",
+		// General & utils
 		"Package Control",
+		"Agila Theme",
+		"GitGutter",
+		"Text Pastry",
+		
+		// Langs
+		"MarkdownEditing",
+		"Anaconda",
 		// "Python 3",
-		"Racket"
+		"Racket",
+		"TypeScript"
 	]
 }
