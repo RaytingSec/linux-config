@@ -27,8 +27,8 @@ alias gpp='g++ -std=c++11'
 # Deprecated in favor of .gitconfig aliases
 # alias git-prettylog='git log --graph --decorate --pretty=oneline --abbrev-commit'
 # alias git-update='git remote -v update && git status'
-alias git-commit='git add -A && git commit -m'
-alias git-commit-push='git add -A && git commit && git push'
+# alias git-commit='git add -A && git commit -m'
+# alias git-commit-push='git add -A && git commit && git push'
 
 # Misc
 alias yiff='sudo -E'
@@ -41,4 +41,3 @@ findname () { find $(pwd) ! -readable -prune -o -iname "*$@*" -print; }
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-

@@ -2,9 +2,10 @@
 NORMAL="\[\033[0m\]"
 WHITE="\[\033[37m\]"
 RED="\[\033[31m\]"
+DULLRED="\[\033[38;5;124m\]"
 YELLOW="\[\033[33m\]"
 NEONGREEN="\[\033[38;5;10m\]"
-GREEN="\[\033[38;5;28m\]"
+GREEN="\[\033[38;5;34m\]"
 BLUE="\[\033[38;5;39m\]"
 GRAY="\[\033[38;5;246m\]"
 
@@ -20,7 +21,8 @@ DIR=$NORMAL$GREEN'\w'
 END=$NORMAL'\$ '
 
 # Git stuff
-GIT=$NORMAL$RED'$(__git_ps1)'
+# GIT=$NORMAL$GRAY'$(__git_ps1)'
+GIT=$NORMAL$DULLRED'$(__git_ps1)'
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWSTASHSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
@@ -32,7 +34,7 @@ GIT_PS1_SHOWUPSTREAM="auto git"
 # make less more friendly for non-text input files, see lesspipe(1)
 # [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-PS1=$STARTBRACKET$TIME$DIVIDER$USR$DIVIDER$DIR$GIT$ENDBRACKET'\n'$END
+PS1=$TIME$DIVIDER$USR$DIVIDER$DIR$GIT'\n'$END
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
