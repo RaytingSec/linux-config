@@ -1,6 +1,6 @@
 # Variables
 VM_LAMP=172.16.80.129
-VM_DEV=172.16.80.130
+VM_DEV=172.16.80.137
 VM_SEC=172.16.80.139
 VM_MAPR=172.16.80.128
 
@@ -35,7 +35,7 @@ alias yiff='sudo -E'
 # alias update='sudo apt update && apt list --upgradable; alert'
 alias todaysnotes='py3 $HOME/py/notes.py'
 alias diff='colordiff -u'
-findname () { find $(pwd) ! -readable -prune -o -iname "*$@*" -print; }
+findname () { find . ! -readable -prune -o -iname "*$@*" -print; }
 
 # Alias from Debian .bashrc
 # Add an "alert" alias for long running commands.  Use like so:
