@@ -1,6 +1,6 @@
 # Variables
 VM_LAMP=172.16.80.129
-VM_DEV=172.16.80.137
+VM_DEV=172.16.80.143
 VM_SEC=172.16.80.139
 VM_MAPR=172.16.80.128
 
@@ -10,6 +10,7 @@ alias ssh-lamp='ssh $VM_LAMP'
 alias ssh-dev='ssh $VM_DEV'
 alias ssh-sec='ssh samurai@$VM_SEC'
 alias ssh-mapr='ssh mapr@$VM_MAPR'
+alias ssh-mapruser='ssh user01@$VM_MAPR'
 
 # ls
 alias ll='ls -alhF --group-directories-first'
@@ -34,7 +35,8 @@ alias gpp='g++ -std=c++11'
 alias yiff='sudo -E'
 # alias update='sudo apt update && apt list --upgradable; alert'
 alias todaysnotes='py3 $HOME/py/notes.py'
-alias diff='colordiff -u'
+alias diff='colordiff -u' # useful for directories
+alias gdiff='git diff'    # better output format in general
 findname () { find . ! -readable -prune -o -iname "*$@*" -print; }
 
 # Alias from Debian .bashrc

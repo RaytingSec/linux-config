@@ -31,10 +31,17 @@ GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_DESCRIBE_STYLE="branch"
 GIT_PS1_SHOWUPSTREAM="auto git"
 
+# If not running interactively, don't do anything
+# Prevents errors with scp
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
 # make less more friendly for non-text input files, see lesspipe(1)
 # [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-PS1=$TIME$DIVIDER$USR$DIVIDER$DIR$GIT'\n'$END
+PS1=$STARTBRACKET$TIME$DIVIDER$USR$DIVIDER$DIR$GIT$ENDBRACKET'\n'$END
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -85,7 +92,7 @@ if [[ -e "$HOME/bin" && -e "$HOME/py" ]]; then
     PATH="$HOME/py:$PATH"
 fi
 
-# Alias definitions.
+# Alias definitions
 if [[ -f ~/.bash_aliases ]]; then
     . ~/.bash_aliases
 fi
