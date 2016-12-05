@@ -14,8 +14,13 @@
 		// Langs
 		"MarkdownEditing",
 		"Anaconda",
+	
+		// Extra Lang Packages
+		// "ANTLR syntax highlight",
+		// "Prolog",
 		// "Python 3",
-		"Racket",
-		"TypeScript"
+		// "Racket",
+		// "TypeScript",
+		// "Yang Syntax Highlighting"
 	]
 }
