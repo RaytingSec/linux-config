@@ -1,6 +1,7 @@
 {
     "python_interpreter": "/usr/bin/python3",
-    "anaconda_linter_delay": 0,
+    "anaconda_linter_delay": 0.1,
+    "anaconda_gutter_theme": "bright",
     "anaconda_linter_mark_style": "none",
     "pep8_ignore": [ "E501" ],
 }
