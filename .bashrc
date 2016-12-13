@@ -1,28 +1,28 @@
 # Colors
-NORMAL="\[\033[0m\]"
-WHITE="\[\033[37m\]"
-RED="\[\033[31m\]"
-DULLRED="\[\033[38;5;124m\]"
-YELLOW="\[\033[33m\]"
-NEONGREEN="\[\033[38;5;10m\]"
-GREEN="\[\033[38;5;34m\]"
-BLUE="\[\033[38;5;39m\]"
-GRAY="\[\033[38;5;246m\]"
+ANSI_NORM="\[\033[0m\]"
+ANSI_WHITE="\[\033[37m\]"
+ANSI_RED="\[\033[31m\]"
+ANSI_DULLRED="\[\033[38;5;124m\]"
+ANSI_YELLOW="\[\033[33m\]"
+ANSI_NEONGREEN="\[\033[38;5;10m\]"
+ANSI_GREEN="\[\033[38;5;34m\]"
+ANSI_BLUE="\[\033[38;5;39m\]"
+ANSI_GRAY="\[\033[38;5;246m\]"
 
-BOLD="\[\033[1m\]"
+ANSI_BOLD="\[\033[1m\]"
 
 # Modules
-STARTBRACKET=$BOLD$NEONGREEN'[ '
-ENDBRACKET=$BOLD$NEONGREEN' ]'
-DIVIDER=$NORMAL' '
-USR=$BOLD$BLUE'\u@\H'
-TIME=$NORMAL$GRAY'\t'
-DIR=$NORMAL$GREEN'\w'
-END=$NORMAL'\$ '
+PS1_STARTBRACKET=$ANSI_BOLD$ANSI_NEONGREEN'[ '
+PS1_ENDBRACKET=$ANSI_BOLD$ANSI_NEONGREEN' ]'
+PS1_DIVIDER=$ANSI_NORM' '
+PS1_USR=$ANSI_BOLD$ANSI_BLUE'\u@\H'
+PS1_TIME=$ANSI_NORM$ANSI_GRAY'\t'
+PS1_DIR=$ANSI_NORM$ANSI_GREEN'\w'
+PS1_END=$ANSI_NORM'\$ '
 
 # Git stuff
-# GIT=$NORMAL$GRAY'$(__git_ps1)'
-GIT=$NORMAL$DULLRED'$(__git_ps1)'
+# GIT=$ANSI_NORM$GRAY'$(__git_ANSI)'
+PS1_GIT=$ANSI_NORM$ANSI_DULLRED'$(__git_ps1)'
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWSTASHSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
@@ -41,7 +41,7 @@ esac
 # make less more friendly for non-text input files, see lesspipe(1)
 # [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-PS1=$STARTBRACKET$TIME$DIVIDER$USR$DIVIDER$DIR$GIT$ENDBRACKET'\n'$END
+PS1=$PS1_STARTBRACKET$PS1_TIME$PS1_DIVIDER$PS1_USR$PS1_DIVIDER$PS1_DIR$PS1_GIT$PS1_ENDBRACKET'\n'$PS1_END
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -101,3 +101,8 @@ fi
 if [[ -f ~/.bash_motd ]]; then
     . ~/.bash_motd
 fi
+
+# ANTLR stuff
+export CLASSPATH=".:/usr/local/lib/antlr-4.5.3-complete.jar:$CLASSPATH"
+alias antlr4='java -jar /usr/local/lib/antlr-4.5.3-complete.jar'
+alias grun='java org.antlr.v4.gui.TestRig'
