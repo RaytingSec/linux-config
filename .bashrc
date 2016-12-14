@@ -41,7 +41,7 @@ esac
 # make less more friendly for non-text input files, see lesspipe(1)
 # [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-PS1=$PS1_STARTBRACKET$PS1_TIME$PS1_DIVIDER$PS1_USR$PS1_DIVIDER$PS1_DIR$PS1_GIT$PS1_ENDBRACKET'\n'$PS1_END
+PS1=$PS1_USR$PS1_DIVIDER$PS1_DIR$PS1_GIT' '$PS1_END
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
