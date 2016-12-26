@@ -19,7 +19,6 @@
     "font_size": 10.5,
     // UI
     "always_show_minimap_viewport": true,
-    "draw_minimap_border": true,
     "highlight_line": true,
     "rulers": [80],
     "word_wrap": "true",
