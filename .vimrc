@@ -6,6 +6,7 @@ set cursorline
 set cursorcolumn
 set so=999 " centers the cursor when possible
 " set mouse=a
+set breakindent
 
 " Theme
 color molokai
