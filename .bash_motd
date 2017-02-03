@@ -5,7 +5,7 @@ ANSI_RED="\e[31m"
 NAME=$(getent passwd $USER | cut -d ':' -f 5)
 FULL_NAME=${NAME//','}
 
-(echo -e "Hi $FULL_NAME. $(hostname) has been $(uptime)\n"; fortune) | cowsay -W80 -n -f rayting
+(echo -e "Hi $FULL_NAME. $(hostname) uptime is\n$(uptime)\n"; fortune) | cowsay -W 80 -n -f rayting
 # | lolcat -p 9 -F .3
 # printf "[""$ANSI_RED""HACKING""$ANSI_NORM""] in progress"
 printf "\n"
