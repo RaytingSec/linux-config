@@ -39,7 +39,7 @@ esac
 # make less more friendly for non-text input files, see lesspipe(1)
 # [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-PS1=$PS1_USR$PS1_DIVIDER$PS1_DIR$PS1_GIT' '$PS1_END
+PS1=$PS1_USR$PS1_DIVIDER$PS1_DIR$PS1_GIT'\n'$PS1_END
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -84,10 +84,13 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# set PATH so it includes user's private bin if it exists
-if [[ -e "$HOME/bin" && -e "$HOME/py" ]]; then
+# Script and executable dirs
+if [[ -e "$HOME/bin" ]]; then
     PATH="$HOME/bin:$PATH"
-    PATH="$HOME/py:$PATH"
+fi
+
+if [[ -e "$HOME/py" ]]; then
+    PATH="$HOME/bin:$PATH"
 fi
 
 # Alias definitions
@@ -95,12 +98,7 @@ if [[ -f ~/.bash_aliases ]]; then
     . ~/.bash_aliases
 fi
 
-# Welcome Text and MOTD
+# Welcome text and MOTD
 if [[ -f ~/.bash_motd ]]; then
     . ~/.bash_motd
 fi
-
-# ANTLR stuff
-export CLASSPATH=".:/usr/local/lib/antlr-4.5.3-complete.jar:$CLASSPATH"
-alias antlr4='java -jar /usr/local/lib/antlr-4.5.3-complete.jar'
-alias grun='java org.antlr.v4.gui.TestRig'
