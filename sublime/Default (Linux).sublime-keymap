@@ -1,5 +1,0 @@
-[
-    { "keys": ["ctrl+alt+shift+s"], "command": "save_all" },
-    { "keys": ["ctrl+shift+d"], "command": "diff_changes" }
-    // { "keys": ["ctrl+k"], "command": "build" }
-]
