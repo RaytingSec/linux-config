@@ -50,6 +50,9 @@ xterm*|rxvt*)
     ;;
 esac
 
+# Explicitly set 256 color
+TERM=xterm-256color
+
 # Eternal bash history.
 # ---------------------
 # Undocumented feature which sets the size to "unlimited".
