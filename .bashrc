@@ -16,8 +16,8 @@ PS1_STARTBRACKET=$ANSI_BOLD$ANSI_NEONGREEN'[ '
 PS1_ENDBRACKET=$ANSI_BOLD$ANSI_NEONGREEN' ]'
 PS1_DIVIDER=$ANSI_NORM' '
 PS1_USR=$ANSI_BOLD$ANSI_BLUE'\u'$ANSI_NORM$ANSI_BLUE'@'$ANSI_BLUE$ANSI_BOLD'\H'
-PS1_TIME=$ANSI_NORM$ANSI_GRAY'\t'
-PS1_DIR=$ANSI_NORM$ANSI_GREEN'\w'
+PS1_TIME=$ANSI_NORM$ANSI_GREEN'\t'
+PS1_DIR=$ANSI_NORM$ANSI_GRAY'\w'
 PS1_END=$ANSI_NORM'\$ '
 
 # Git stuff
@@ -39,7 +39,7 @@ esac
 # make less more friendly for non-text input files, see lesspipe(1)
 # [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-PS1=$PS1_USR$PS1_DIVIDER$PS1_DIR$PS1_GIT'\n'$PS1_END
+PS1=$PS1_TIME$PS1_DIVIDER$PS1_USR$PS1_DIVIDER$PS1_DIR$PS1_GIT'\n'$PS1_END
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
