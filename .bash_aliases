@@ -1,5 +1,5 @@
 # Variables
-VM_LAMP=172.16.80.150
+VM_LAMP=192.168.190.130
 VM_DEV=172.16.80.143
 VM_SEC=172.16.80.139
 VM_MAPR=172.16.80.128
@@ -30,8 +30,10 @@ alias py3='python3'
 alias gpp='g++ -std=c++11'
 
 # Misc
+alias open='xdg-open'
 alias yiff='sudo -E'
-alias todaysnotes='py3 $HOME/py/notes.py'
+alias todaysnotes='py3 ~/py/notes.py'
+alias git-signoff='git push && exit'
 # alias update='sudo apt update && apt list --upgradable; alert'
 
 # Alias from Debian .bashrc
