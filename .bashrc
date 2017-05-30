@@ -7,6 +7,7 @@ ANSI_YELLOW="\[\033[33m\]"
 ANSI_NEONGREEN="\[\033[38;5;10m\]"
 ANSI_GREEN="\[\033[38;5;34m\]"
 ANSI_BLUE="\[\033[38;5;39m\]"
+ANSI_DULLBLUE="\[\033[38;5;33m\]"
 ANSI_GRAY="\[\033[38;5;246m\]"
 
 ANSI_BOLD="\[\033[1m\]"
@@ -29,6 +30,9 @@ GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_DESCRIBE_STYLE="branch"
 GIT_PS1_SHOWUPSTREAM="auto git"
 
+# Python virtualenv stuff
+PS1_VENV=$ANSI_NORM$ANSI_DULLBLUE'$(_virtualenv_ps1)'
+
 # If not running interactively, don't do anything
 # Prevents errors with scp
 case $- in
@@ -39,7 +43,7 @@ esac
 # make less more friendly for non-text input files, see lesspipe(1)
 # [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-PS1=$PS1_TIME$PS1_DIVIDER$PS1_USR$PS1_DIVIDER$PS1_DIR$PS1_GIT'\n'$PS1_END
+PS1=$PS1_TIME$PS1_DIVIDER$PS1_USR$PS1_DIVIDER$PS1_DIR$PS1_GIT$PS1_DIVIDER$PS1_VENV'\n'$PS1_END
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -93,7 +97,7 @@ if [[ -e "$HOME/bin" ]]; then
 fi
 
 if [[ -e "$HOME/py" ]]; then
-    PATH="$HOME/bin:$PATH"
+    PATH="$HOME/py:$PATH"
 fi
 
 # Alias definitions
@@ -104,4 +108,9 @@ fi
 # Welcome text and MOTD
 if [[ -f ~/.bash_motd ]]; then
     . ~/.bash_motd
+fi
+
+# Python virtualenv helpers
+if [[ -f ~/.py_virtualenv ]]; then
+    . ~/.py_virtualenv
 fi
