@@ -92,25 +92,14 @@ if ! shopt -oq posix; then
 fi
 
 # Script and executable dirs
-if [[ -e "$HOME/bin" ]]; then
-    PATH="$HOME/bin:$PATH"
-fi
-
-if [[ -e "$HOME/py" ]]; then
-    PATH="$HOME/py:$PATH"
-fi
+PATH="$HOME/bin:$PATH"
+PATH="$HOME/py:$PATH"
 
 # Alias definitions
-if [[ -f ~/.bash_aliases ]]; then
-    . ~/.bash_aliases
-fi
+source ~/.bash_aliases
 
 # Welcome text and MOTD
-if [[ -f ~/.bash_motd ]]; then
-    . ~/.bash_motd
-fi
+source ~/.bash_motd
 
 # Python virtualenv helpers
-if [[ -f ~/.py_virtualenv ]]; then
-    . ~/.py_virtualenv
-fi
+source ~/.py_virtualenv
