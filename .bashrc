@@ -30,8 +30,8 @@ GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_DESCRIBE_STYLE="branch"
 GIT_PS1_SHOWUPSTREAM="auto git"
 
-# Python virtualenv stuff
-PS1_VENV=$ANSI_NORM$ANSI_DULLBLUE'$(_virtualenv_ps1)'
+# Python venv stuff
+PS1_VENV=$ANSI_NORM$ANSI_DULLBLUE'$(_venv_ps1)'
 
 # If not running interactively, don't do anything
 # Prevents errors with scp
@@ -101,5 +101,5 @@ source ~/.bash_aliases
 # Welcome text and MOTD
 source ~/.bash_motd
 
-# Python virtualenv helpers
-source ~/.py_virtualenv
+# Python venv helpers
+source ~/.py_autovenv
