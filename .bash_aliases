@@ -26,7 +26,9 @@ alias diff='colordiff -u' # useful for directories
 alias gdiff='git diff'    # better output format in general
 
 # Coding
+alias py='python'
 alias py3='python3'
+alias ipy='ipython'
 alias gpp='g++ -std=c++11'
 
 # Misc
