@@ -17,7 +17,8 @@ cl () { cd "$@" && l; }
 
 # Searching
 # grep
-alias gref='grep -Rina'
+alias gref='grep -Rin'
+alias grefa='grep -Rina'
 # File name search
 findname () { find . ! -readable -prune -o -iname "*$@*" -print; }
 
