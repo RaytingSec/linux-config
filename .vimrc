@@ -10,9 +10,10 @@ set breakindent
 
 " Theme
 color molokai
-let g:molokai_original = 1
-set t_Co=256
-"let g:rehash256 = 1
+" theme options, seem to have no effect
+" let g:molokai_original = 1
+" let g:rehash256 = 1
+set t_Co=256  " Retain colors in tmux
 
 " Tabs
 set tabstop=4
