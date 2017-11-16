@@ -1,8 +1,33 @@
-# Colors
+#!/bin/bash
 
-NAME=$(getent passwd $USER | cut -d ':' -f 5)
-FULL_NAME=${NAME//','}
+# Greeting
+hour=$(date +%H)
+if [[ $hour -lt 6 ]]; then
+  greet=("Greetings, friend of the night")
+elif [[ $hour -lt 12 ]]; then
+  greet=("Good morning"
+         "Top of the morning to you")
+elif [[ $hour -lt 19 ]]; then
+  greet=("Good afternoon")
+else
+  greet=("Good evening")
+fi
+greet+=("Hello"
+        "Yip hi :3")
+index=$[$RANDOM % ${#greet[@]}]
+greeting=${greet[$index]}
 
-(echo -e "Hi $FULL_NAME. $(hostname) uptime is:\n$(uptime)\n"; fortune -ec) | cowsay -W 80 -n -f rayting
+# MOTD
+name=$(getent passwd $USER | cut -d ':' -f 5)
+name=${name//','}
+
+motd="$greeting, $name.\n
+\n
+Today's $(date +"%A"),\n
+$(date +"%F %T %z (%Z)")\n
+\n
+$(hostname): up $(uptime | cut -d 'p' -f 2)\n
+"
+(echo -e $motd; fortune -ce) | cowsay -W 80 -n -f rayting
 # | lolcat -p 9 -F .3
 printf "\n"
