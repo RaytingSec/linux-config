@@ -21,13 +21,18 @@ greeting=${greet[$index]}
 name=$(getent passwd $USER | cut -d ':' -f 5)
 name=${name//','}
 
-motd="$greeting, $name.\n
+motd_long="$greeting, $name.\n
 \n
 Today's $(date +"%A"),\n
 $(date +"%F %T %z (%Z)")\n
 \n
 $(hostname): up $(uptime | cut -d 'p' -f 2)\n
 "
-(echo -e $motd; fortune -ce) | cowsay -W 80 -n -f rayting
+motd_short="$greeting, $name.\n
+\n
+$(hostname): up $(uptime | cut -d 'p' -f 2)\n
+"
+
+(echo -e $motd_short; fortune -ce) | cowsay -nf rayting
 # | lolcat -p 9 -F .3
 printf "\n"
