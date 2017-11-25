@@ -1,3 +1,0 @@
-# Local VMs
-Host 192.168.40.*
-    IdentityFile ~/.ssh/id_vm

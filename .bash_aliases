@@ -1,15 +1,3 @@
-# Variables
-VM_LAMP=192.168.190.130
-VM_DEV=172.16.80.143
-VM_SEC=172.16.80.139
-VM_MAPR=172.16.80.128
-
-# ssh
-alias ssh-raydar='ssh raydar.net'
-alias ssh-lamp='ssh $VM_LAMP'
-alias ssh-dev='ssh $VM_DEV'
-alias ssh-sec='ssh samurai@$VM_SEC'
-
 # ls
 alias ll='ls -alhF --group-directories-first'
 alias l='ls -ACF'
