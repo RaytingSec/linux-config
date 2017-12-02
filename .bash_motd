@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Greeting
-hour=$(date +%H)
+hour=$(date +%k)
 if [[ $hour -lt 6 ]]; then
   greet=("Greetings, friend of the night")
 elif [[ $hour -lt 12 ]]; then
@@ -33,6 +33,6 @@ motd_short="$greeting, $name.\n
 $(hostname): up $(uptime | cut -d 'p' -f 2)\n
 "
 
-(echo -e $motd_short; fortune -ce) | cowsay -nf rayting
+(echo -e $motd_short; fortune -e hugs) | cowsay -nf rayting
 # | lolcat -p 9 -F .3
 printf "\n"
