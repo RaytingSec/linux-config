@@ -48,7 +48,19 @@ esac
 # Simple
 # PS1=$PS1_USRHOST$PS1_DIVIDER$PS1_DIR$PS1_DIVIDER$PS1_END
 # Detailed
-PS1=$PS1_TIME$PS1_DIVIDER$PS1_USRHOST$PS1_DIVIDER$PS1_DIR$PS1_GIT$PS1_DIVIDER$PS1_VENV'\n'$PS1_END
+#PS1=$PS1_TIME$PS1_DIVIDER$PS1_USRHOST$PS1_DIVIDER$PS1_DIR$PS1_GIT$PS1_DIVIDER$PS1_VENV'\n'$PS1_END
+# powerline-shell
+#function _update_ps1() {
+#    PS1="$(powerline-shell $?)"
+#}
+#if [ "$TERM" != "linux" ]; then
+#    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+#fi
+# powerline-status
+powerline-daemon -q
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
+source /usr/local/lib/python3.5/dist-packages/powerline/bindings/bash/powerline.sh
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -60,7 +72,7 @@ xterm*|rxvt*)
 esac
 
 # Explicitly set 256 color
-#TERM=xterm-256color
+# TERM=xterm-256color
 
 # Eternal bash history.
 # ---------------------

@@ -11,8 +11,8 @@ alias grefa='grep -Rina'
 findname () { find . ! -readable -prune -o -iname "*$@*" -print; }
 
 # diff
-alias diff='colordiff -u' # useful for directories
-alias gdiff='git diff'    # better output format in general
+alias diff='colordiff -u'  # useful for directories
+alias gdiff='git diff'     # better output format in general
 
 # Coding
 alias py='python'
@@ -32,3 +32,5 @@ alias git-signoff='git push && exit'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+alias hug='fortune hugs'
