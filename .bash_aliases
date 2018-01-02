@@ -22,6 +22,7 @@ alias gpp='g++ -std=c++11'
 alias pip-upgradeall="pip list --outdated | cut -d ' ' -f1 | xargs -n1 sudo -H pip3 install -U"
 
 # Misc
+epoch () { date -u --date '@'$@; }  # Convert unix epoch timestamp
 alias open='xdg-open'
 alias yiff='sudo -E'
 alias todaysnotes='py3 ~/py/notes.py'
