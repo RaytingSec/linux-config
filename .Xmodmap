@@ -1,2 +1,10 @@
+! Originals
+! keycode 108 = Alt_R
+
 ! Set Alt_R as Menu key
 ! keycode 108 = Menu NoSymbol Menu
+
+! Scroll lock as menu key
+! Enable scroll lock first
+add mod3 = Scroll_Lock
+keycode 78 = Menu NoSymbol Menu
