@@ -33,6 +33,6 @@ motd_short="$greeting, $name.\n
 $(hostname): up $(uptime | cut -d 'p' -f 2)\n
 "
 
-(echo -e $motd_short; fortune -c -e debian debian-hints linux linuxcookie computers miscellaneous hugs) | cowsay -nf rayting
+(echo -e $motd_short; fortune -c linux linuxcookie computers miscellaneous hugs) | cowsay -nf rayting
 # | lolcat -p 9 -F .3
 printf "\n"
