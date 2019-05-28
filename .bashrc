@@ -44,12 +44,13 @@ esac
 # [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # Default
-# PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 # Simple
 # PS1=$PS1_USRHOST$PS1_DIVIDER$PS1_DIR$PS1_DIVIDER$PS1_END
 # Detailed
 #PS1=$PS1_TIME$PS1_DIVIDER$PS1_USRHOST$PS1_DIVIDER$PS1_DIR$PS1_GIT$PS1_DIVIDER$PS1_VENV'\n'$PS1_END
-# powerline-shell
+
+# powerline-shell (python method)
 #function _update_ps1() {
 #    PS1="$(powerline-shell $?)"
 #}
@@ -57,10 +58,18 @@ esac
 #    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 #fi
 # powerline-status
-powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
-source /usr/local/lib/python3.5/dist-packages/powerline/bindings/bash/powerline.sh
+# powerline-daemon -q
+# POWERLINE_BASH_CONTINUATION=1
+# POWERLINE_BASH_SELECT=1
+# source /usr/local/lib/python3.5/dist-packages/powerline/bindings/bash/powerline.sh
+
+# powerline (fedora)
+if [ -f $(which powerline-daemon) ]; then
+  powerline-daemon -q
+  POWERLINE_BASH_CONTINUATION=1
+  POWERLINE_BASH_SELECT=1
+  . /usr/share/powerline/bash/powerline.sh
+fi
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
