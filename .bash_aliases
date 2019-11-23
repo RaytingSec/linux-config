@@ -11,7 +11,7 @@ alias grefa='grep -Rina'
 findname () { find . ! -readable -prune -o -iname "*$@*" -print; }
 
 # diff
-alias diff='colordiff -u'  # useful for directories
+# alias diff='colordiff -u'  # useful for directories
 alias gdiff='git diff'     # better output format in general
 
 # Coding
