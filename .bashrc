@@ -12,11 +12,6 @@ then
 fi
 export PATH
 
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
-
-# User specific aliases and functions
-
 # Eternal bash history.
 # ---------------------
 # Undocumented feature which sets the size to "unlimited".
@@ -62,6 +57,9 @@ fi
 # Alias definitions
 if [[ -f ~/.bash_aliases ]]; then
     . ~/.bash_aliases
+fi
+if [[ -f ~/.bash_aliases_local ]]; then
+    . ~/.bash_aliases_local
 fi
 
 # Welcome text and MOTD

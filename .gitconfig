@@ -4,7 +4,7 @@
 [push]
     default = simple
 [merge]
-    summary=true
+    summary = true
 [core]
     editor = vim
 [alias]
@@ -12,15 +12,18 @@
     ci = commit
     br = branch
     co = checkout
-    df = diff
-    dc = diff --cached
-    lg = log -p
+    df = diff --color-words
+    lg = log -p --abbrev-commit
     who = shortlog -s --
-    update = remote -v update
+    poll-update = fetch --dry-run
+    update = remote update --prune
+    push-head = push origin HEAD
 
-    # Pretty logging (deprecated, use log-flow instead)
-    #log-pretty = log --graph --abbrev-commit --decorate --all --pretty=oneline
+    # git log styles
+    log-graph = log --graph --abbrev-commit --decorate --date-order
+    # Source:
     # http://stackoverflow.com/questions/1838873/visualizing-branch-topology-in-git/34467298#34467298
     log-flow = !"git log-flow-this" --all
     log-flow-this = log --graph --abbrev-commit --decorate  --format=format:'%C(blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
+    log-fc = log-flow-chrono
     log-flow-chrono = !"git log-flow" --date-order
