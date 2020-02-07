@@ -82,6 +82,6 @@ opennotes () {
     if [ "$note" = "" ]; then
         echo "Note not found with name '$@'"
     else
-        vim $note
+        vim "$note"
     fi
 }
