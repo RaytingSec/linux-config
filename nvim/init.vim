@@ -60,6 +60,18 @@ autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checkti
 autocmd FileChangedShellPost *
   \ echohl WarningMsg | echo "File changed on disk, buffer reloaded." | echohl None
 
+" Plug Manager
+" Install if not present
+if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+" Install missing plugins
+autocmd VimEnter *
+  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \|   PlugInstall --sync | q
+  \| endif
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-sensible'
@@ -69,13 +81,5 @@ Plug 'vim-syntastic/syntastic'
 Plug 'dense-analysis/ale'
 Plug 'airblade/vim-gitgutter'
 call plug#end()
-
-" Install missing
-autocmd VimEnter *
-  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \|   PlugInstall --sync | q
-  \| endif
-
 " Plugin configs
 autocmd BufWritePost * GitGutter
-
