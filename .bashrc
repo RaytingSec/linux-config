@@ -71,3 +71,8 @@ fi
 if [[ -f ~/.py_autovenv ]]; then
     . ~/.py_autovenv
 fi
+
+# Local bash config
+if [[ -f ~/.bashrc_local ]]; then
+    . ~/.bashrc_local
+fi
