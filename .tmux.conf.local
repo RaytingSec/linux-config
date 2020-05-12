@@ -296,4 +296,8 @@ set -g mouse on
 #set -g status-position top
 
 # Update interval
-# set -g status-interval 1
+set -g status-interval 1
+
+# Only use C-b as prefix
+set -gu prefix2
+unbind C-a

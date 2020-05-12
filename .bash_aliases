@@ -1,8 +1,8 @@
 # Common bash aliases
 
 # ls
-alias ll='ls -alhF --group-directories-first'
-alias l='ls -ACF'
+alias ll='ls --color -alhF --group-directories-first'
+alias l='ls --color -ACF'
 cl () { cd "$@" && l; }
 
 # grep
@@ -47,8 +47,12 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias hug='fortune hugs'
 
 bash-reload () {
-    source /etc/bashrc  # also reloads ~/.bashrc
-    # source ~/.bash_profile
+    # Load system-wide bashrc
+    # Catches `bashrc` and `bash.bashrc`
+    source /etc/*bashrc
+
+    # Load user bashrc
+    source ~/.bash_profile
     # source ~/.bashrc
     # source ...
 }
@@ -75,10 +79,10 @@ alias tmux-workspace="tmux new-window \; \
 
 # Notes helpers
 findnotes () {
-    find ~/Documents/Notes/ -iname "*$@*.md" -type f
+    find ~/Documents/notes/ -iname "*$@*.md" -type f
 }
 opennotes () {
-    note=$(find ~/Documents/Notes/ -iname "*$@*.md" -type f | head -1)
+    note=$(find ~/Documents/notes/ -iname "*$@*.md" -type f | head -1)
     if [ "$note" = "" ]; then
         echo "Note not found with name '$@'"
     else

@@ -35,10 +35,11 @@ $(hostname): up $(uptime | cut -d 'p' -f 2)\n
 
 # Cowfile selection
 cow=tux
-if [[ -f /usr/share/cowsay/rayting.cow ]]; then
+if [[ -f /usr/share/cowsay/cows/rayting.cow ]]; then
     cow=rayting
 fi
 
-(echo -e $motd_short; fortune -c linux linuxcookie computers miscellaneous hugs) | cowsay -nf $cow
+(echo -e $motd_short; fortune) | cowsay -nf $cow
+# (echo -e $motd_short; fortune -c linux linuxcookie computers miscellaneous hugs) | cowsay -nf $cow
 # | lolcat -p 9 -F .3
 printf "\n"

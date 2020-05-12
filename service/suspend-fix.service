@@ -1,0 +1,10 @@
+# cp suspend-fix.service /etc/systemd/system && systemctl enable --now suspend-fix.service
+[Unit]
+Description=Disable suspend wakeup interrupts except for LID
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c "echo XHCI > /proc/acpi/wakeup && echo IGBE > /proc/acpi/wakeup"
+
+[Install]
+WantedBy=multi-user.target
