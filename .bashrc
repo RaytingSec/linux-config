@@ -2,15 +2,16 @@
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+    . /etc/bashrc
+elif [ -f /etc/bash.bashrc ]; then
+    . /etc/bash.bashrc
 fi
 
 # User's global definitions
 EDITOR=vim
 
 # User specific environment
-if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
-then
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
     PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
 export PATH
@@ -27,34 +28,57 @@ export HISTSIZE=
 export HISTFILE=~/.bash_eternal_history
 # Force prompt to write history after every command, instead of session close.
 # http://superuser.com/questions/20900/bash-history-loss
-PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-# if ! shopt -oq posix; then
-#   if [ -f /usr/share/bash-completion/bash_completion ]; then
-#     . /usr/share/bash-completion/bash_completion
-#   elif [ -f /etc/bash_completion.d ]; then
-#     . /etc/bash_completion.d
-#   fi
-# fi
+if ! shopt -oq posix; then
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+        . /usr/share/bash-completion/bash_completion
+    elif [ -f /etc/bash_completion.d ]; then
+        . /etc/bash_completion.d
+    fi
+fi
 
-# powerline (fedora)
+# powerline
 if [ -f $(which powerline-daemon) ]; then
-  powerline-daemon -q
-  POWERLINE_BASH_CONTINUATION=1
-  POWERLINE_BASH_SELECT=1
-  . /usr/share/powerline/bash/powerline.sh
+    powerline-daemon -q
+    POWERLINE_BASH_CONTINUATION=1
+    POWERLINE_BASH_SELECT=1
+    . /usr/share/powerline/integrations/powerline.sh
+    # Fedora:
+    # . /usr/share/powerline/bash/powerline.sh
+fi
+
+# Launch tmux in all new terminal sessions
+# https://wiki.archlinux.org/index.php/Tmux#Start_tmux_on_every_shell_login
+# Only when there's a graphical environment
+if [[ $DISPLAY ]]; then
+    # If not running interactively, do not do anything
+    [[ $- != *i* ]] && return
+    # Need tmux installed, not running inside of screen or tmux already, and currently using interactive shell
+    # https://unix.stackexchange.com/questions/43601/how-can-i-set-my-default-shell-to-start-up-tmux
+    if command -v tmux &> /dev/null &&
+        [ -n "$PS1" ] &&
+        [[ ! "$TERM" =~ screen ]] &&
+        [[ ! "$TERM" =~ tmux ]] &&
+        [ -z "$TMUX" ]; then
+        exec tmux
+    fi
 fi
 
 # Script and executable dirs
 if [[ -e "$HOME/bin" ]]; then
     PATH="$HOME/bin:$PATH"
 fi
-
 if [[ -e "$HOME/py" ]]; then
     PATH="$HOME/py:$PATH"
+fi
+
+# Local bash config
+if [[ -f ~/.bashrc_local ]]; then
+    . ~/.bashrc_local
 fi
 
 # Alias definitions
@@ -73,9 +97,4 @@ fi
 # Python venv helper
 if [[ -f ~/.py_autovenv ]]; then
     . ~/.py_autovenv
-fi
-
-# Local bash config
-if [[ -f ~/.bashrc_local ]]; then
-    . ~/.bashrc_local
 fi
