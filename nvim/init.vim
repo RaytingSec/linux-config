@@ -39,17 +39,13 @@ inoremap <Up> <C-o>gk
 
 " Powerline
 " Disabled by default, doesn't play nice in virtualenvs
-"python3 from powerline.vim import setup as powerline_setup
-"python3 powerline_setup()
-"python3 del powerline_setup
-"set laststatus=2 " Always display the statusline in all windows
-"set showtabline=2 " Always display the tabline, even if there is only one tab
-"set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
-"set t_Co=256
-
-" Theming
-" let g:vim_monokai_tasty_italic = 1
-colorscheme vim-monokai-tasty
+" python3 from powerline.vim import setup as powerline_setup
+" python3 powerline_setup()
+" python3 del powerline_setup
+" set laststatus=2 " Always display the statusline in all windows
+" set showtabline=2 " Always display the tabline, even if there is only one tab
+" set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+" set t_Co=256
 
 " Triger `autoread` when files changes on disk
 " https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
@@ -74,12 +70,27 @@ autocmd VimEnter *
   \| endif
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
+Plug 'patstockwell/vim-monokai-tasty'
 Plug 'tpope/vim-sensible'
 Plug 'sheerun/vim-polyglot'
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'vim-syntastic/syntastic'
 Plug 'dense-analysis/ale'
 Plug 'airblade/vim-gitgutter'
+Plug 'elzr/vim-json'
+Plug 'styled-components/vim-styled-components'
+" Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
 call plug#end()
+
 " Plugin configs
+
+" gitgutter
 autocmd BufWritePost * GitGutter
+
+" vim-monokai-tasty
+let g:vim_monokai_tasty_italic = 1
+colorscheme vim-monokai-tasty
+
+" vim-airline
+let g:airline_theme='monokai_tasty'
