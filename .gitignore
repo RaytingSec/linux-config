@@ -3,3 +3,4 @@ vlc-qt-interface.conf
 crypttab
 fstab
 solaar_config.json
+nvidia/
