@@ -301,3 +301,6 @@ set -g status-interval 1
 # Only use C-b as prefix
 set -gu prefix2
 unbind C-a
+
+# Increase show-panes overlay duration (C-b q)
+set -g display-panes-time 5000
