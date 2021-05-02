@@ -281,9 +281,15 @@ set -g history-limit 10000  # 10,000
 set -g mouse on
 
 # force Vi mode
-#   really you should export VISUAL or EDITOR environment variable, see manual
-#set -g status-keys vi
-#set -g mode-keys vi
+# Note that the mode is automatically set with your EDITOR variable, which is set to vim already
+# Also really you should export VISUAL or EDITOR environment variable, see manual
+# set -g status-keys vi
+# set -g mode-keys vi
+
+# Explicitly use emacs
+# emacs mode has incremental search highlighting
+set -g status-keys emacs
+set -g mode-keys emacs
 
 # replace C-b by C-a instead of using both prefixes
 # set -gu prefix2
@@ -296,7 +302,7 @@ set -g mouse on
 #set -g status-position top
 
 # Update interval
-set -g status-interval 1
+set -g status-interval 2
 
 # Only use C-b as prefix
 set -gu prefix2
