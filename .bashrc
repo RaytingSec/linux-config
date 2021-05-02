@@ -50,6 +50,9 @@ if command -v powerline-daemon &> /dev/null; then
     # . /usr/share/powerline/integrations/powerline.sh
     # Fedora:
     . /usr/share/powerline/bash/powerline.sh
+else
+    # Simple PS1
+    PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 fi
 
 # Script and executable dirs

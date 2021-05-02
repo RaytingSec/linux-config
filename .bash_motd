@@ -35,7 +35,7 @@ $(hostname): up $(uptime | cut -d 'p' -f 2)\n
 
 # Cowfile selection
 cow=tux
-if [[ -f /usr/share/cowsay/cows/rayting.cow ]]; then
+if [[ -f /usr/share/cowsay/cows/rayting.cow ]] || [[ -f /usr/share/cowsay/rayting.cow ]]; then
     cow=rayting
 fi
 

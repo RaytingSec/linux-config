@@ -26,6 +26,7 @@ alias vim='nvim'
 # Other util enhancements
 alias tree='tree -C -F'
 alias less='less -NRJ'
+alias mtr='mtr -o "LSRD NABWV JMX"'
 
 # Coding
 alias py='python'
