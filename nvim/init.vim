@@ -74,12 +74,12 @@ Plug 'patstockwell/vim-monokai-tasty'
 Plug 'tpope/vim-sensible'
 Plug 'sheerun/vim-polyglot'
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
-Plug 'vim-syntastic/syntastic'
+Plug 'vim-syntastic/syntastic'  " used to have this disabled, seems to work now
 Plug 'dense-analysis/ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'elzr/vim-json'
 Plug 'styled-components/vim-styled-components'
-" Plug 'itchyny/lightline.vim'
+Plug 'itchyny/lightline.vim'  " used to have this disabled, seems to work now
 Plug 'vim-airline/vim-airline'
 call plug#end()
 
