@@ -8,7 +8,7 @@ elif [ -f /etc/bash.bashrc ]; then
 fi
 
 # User's global definitions
-EDITOR=vim
+export EDITOR=vim
 
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
@@ -41,31 +41,15 @@ if ! shopt -oq posix; then
     fi
 fi
 
-# powerline
-if [ -f $(which powerline-daemon) ]; then
+# Powerline
+# Activate if command exists
+if command -v powerline-daemon &> /dev/null; then
     powerline-daemon -q
     POWERLINE_BASH_CONTINUATION=1
     POWERLINE_BASH_SELECT=1
-    . /usr/share/powerline/integrations/powerline.sh
+    # . /usr/share/powerline/integrations/powerline.sh
     # Fedora:
-    # . /usr/share/powerline/bash/powerline.sh
-fi
-
-# Launch tmux in all new terminal sessions
-# https://wiki.archlinux.org/index.php/Tmux#Start_tmux_on_every_shell_login
-# Only when there's a graphical environment
-if [[ $DISPLAY ]]; then
-    # If not running interactively, do not do anything
-    [[ $- != *i* ]] && return
-    # Need tmux installed, not running inside of screen or tmux already, and currently using interactive shell
-    # https://unix.stackexchange.com/questions/43601/how-can-i-set-my-default-shell-to-start-up-tmux
-    if command -v tmux &> /dev/null &&
-        [ -n "$PS1" ] &&
-        [[ ! "$TERM" =~ screen ]] &&
-        [[ ! "$TERM" =~ tmux ]] &&
-        [ -z "$TMUX" ]; then
-        exec tmux
-    fi
+    . /usr/share/powerline/bash/powerline.sh
 fi
 
 # Script and executable dirs
