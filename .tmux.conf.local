@@ -42,7 +42,7 @@ tmux_conf_new_session_prompt=false
 # RGB 24-bit colour support (tmux >= 2.2), possible values are:
 #  - true
 #  - false (default)
-tmux_conf_theme_24b_colour=false
+tmux_conf_theme_24b_colour=true
 
 # window style
 tmux_conf_theme_window_fg='default'
@@ -292,21 +292,21 @@ set -g status-keys emacs
 set -g mode-keys emacs
 
 # replace C-b by C-a instead of using both prefixes
+set -gu prefix2
+unbind C-a
+unbind C-b
+set -g prefix C-a
+bind C-a send-prefix
+
+# Only use C-b as prefix
 # set -gu prefix2
 # unbind C-a
-# unbind C-b
-# set -g prefix C-a
-# bind C-a send-prefix
 
 # move status line to top
 #set -g status-position top
 
 # Update interval
 set -g status-interval 2
-
-# Only use C-b as prefix
-set -gu prefix2
-unbind C-a
 
 # Increase show-panes overlay duration (C-b q)
 set -g display-panes-time 5000
