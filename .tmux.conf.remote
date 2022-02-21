@@ -1,0 +1,9 @@
+# tmux conf useful for remote machines by allowing nested tmux sessions with changed prefix
+
+# set prefix
+unbind C-b
+set-option -g prefix C-a
+bind-key C-a send-prefix
+
+# differentiate with color
+set-option -g status-bg cyan
