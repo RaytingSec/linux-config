@@ -94,3 +94,4 @@ colorscheme vim-monokai-tasty
 
 " vim-airline
 let g:airline_theme='monokai_tasty'
+let g:airline_powerline_fonts = 1

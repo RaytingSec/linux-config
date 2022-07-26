@@ -46,7 +46,7 @@ greeting=${greet[$index]}
 # "
 motd_short="${greeting}\n
 \n
-${HOSTNAME}: up $(uptime | cut -d 'p' -f 2)\n
+${HOSTNAME}: up $(uptime -p | cut -d 'p' -f 2)\n
 "
 
 # Cowfile selection

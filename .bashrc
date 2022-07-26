@@ -1,5 +1,7 @@
 # .bashrc
 
+__vte_prompt_command () { true; }
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
     . /etc/bashrc
