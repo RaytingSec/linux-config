@@ -79,9 +79,12 @@ alias tmux-workspace="tmux new-window \; \
     select-pane -t 3 \;"
 
 # Notes helpers
+
+# Recursive find substring of notes filename
 findnotes () {
     find ~/Documents/notes/ -iname "*$@*.md" -type f
 }
+# Basically same as findnotes but open the first result with vim
 opennotes () {
     note=$(find ~/Documents/notes/ -iname "*$@*.md" -type f | head -1)
     if [ "$note" = "" ]; then
@@ -92,9 +95,12 @@ opennotes () {
 }
 
 # Project helpers
+
+# Search for project dir by substring matching dir name
 findproject () {
     find ~/projects/ -maxdepth 1 -iname "*$@*" -type d
 }
+# Access a project dir via serial number
 cdproject () {
     cd ~/projects/${@}_*
 }
