@@ -90,3 +90,11 @@ opennotes () {
         vim "$note"
     fi
 }
+
+# Project helpers
+findproject () {
+    find ~/projects/ -maxdepth 1 -iname "*$@*" -type d
+}
+cdproject () {
+    cd ~/projects/${@}_*
+}
