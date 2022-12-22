@@ -1,7 +1,3 @@
-# .bashrc
-
-__vte_prompt_command () { true; }
-
 # Source global definitions
 if [ -f /etc/bashrc ]; then
     . /etc/bashrc
@@ -9,14 +5,33 @@ elif [ -f /etc/bash.bashrc ]; then
     . /etc/bash.bashrc
 fi
 
-# User's global definitions
-export EDITOR=vim
+# On Linux:
+# # User specific environment
+# if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
+#     PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+# fi
 
-# User specific environment
-if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
-    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+# Add python commands to path
+# Necessary in order to set up powerline shell
+PATH="/Users/rayting/Library/Python/3.10/bin:$PATH"
+
+# Powerline
+# Activate if command exists
+if command -v powerline-daemon &> /dev/null; then
+    powerline-daemon -q
+    POWERLINE_BASH_CONTINUATION=1
+    POWERLINE_BASH_SELECT=1
+    # Mac
+    . /Users/rayting/Library/Python/3.10/lib/python/site-packages/powerline/bindings/bash/powerline.sh
+    # Ubuntu I think:
+    # . /usr/share/powerline/integrations/powerline.sh
+    # Fedora:
+    # . /usr/share/powerline/bash/powerline.sh
+# Else use a simple PS1
+else
+    # Simple PS1
+    PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 fi
-export PATH
 
 # Eternal bash history.
 # ---------------------
@@ -43,19 +58,8 @@ if ! shopt -oq posix; then
     fi
 fi
 
-# Powerline
-# Activate if command exists
-if command -v powerline-daemon &> /dev/null; then
-    powerline-daemon -q
-    POWERLINE_BASH_CONTINUATION=1
-    POWERLINE_BASH_SELECT=1
-    # . /usr/share/powerline/integrations/powerline.sh
-    # Fedora:
-    . /usr/share/powerline/bash/powerline.sh
-else
-    # Simple PS1
-    PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-fi
+# User's global definitions
+export EDITOR=nvim
 
 # Script and executable dirs
 if [[ -e "$HOME/bin" ]]; then
@@ -87,3 +91,5 @@ fi
 if [[ -f ~/.py_autovenv ]]; then
     . ~/.py_autovenv
 fi
+
+export PATH
