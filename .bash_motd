@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Get user's full name
-name=$(getent passwd $USER | cut -d ':' -f 5)
+# name=$(getent passwd $USER | cut -d ':' -f 5)  # Linux
+name=$(id -F)  # Mac
 name=${name//','}
 
 # Prepare list of greetings according to local time, as flavor text
@@ -46,13 +47,15 @@ greeting=${greet[$index]}
 # "
 motd_short="${greeting}\n
 \n
-${HOSTNAME}: up $(uptime -p | cut -d 'p' -f 2)\n
+${HOSTNAME}: up $(uptime | cut -d 'p' -f 2)\n
 "
 
 # Cowfile selection
 cow=tux
 if [[ -f /usr/share/cowsay/cows/rayting.cow ]] || [[ -f /usr/share/cowsay/rayting.cow ]]; then
     cow=rayting
+elif [[ -r ~/code/foxsay/rayting.cow ]]; then
+    cow=~/code/foxsay/rayting.cow
 fi
 
 (echo -e $motd_short; fortune) | cowsay -nf $cow
