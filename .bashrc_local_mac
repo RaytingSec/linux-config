@@ -1,7 +1,0 @@
-# Set PATH, MANPATH, etc., for Homebrew.
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
-# Sublime
-PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
-
-export BASH_SILENCE_DEPRECATION_WARNING=1

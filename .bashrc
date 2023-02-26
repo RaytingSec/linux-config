@@ -5,13 +5,22 @@ elif [ -f /etc/bash.bashrc ]; then
     . /etc/bash.bashrc
 fi
 
+# Add useful commands to path
+
 # On Linux:
 # # User specific environment
 # if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
 #     PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 # fi
 
-# Add python commands to path
+# Set PATH, MANPATH, etc., for Homebrew.
+# Otherwise you can't run things installed by brew without full path
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Sublime
+PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
+
+# Python
 # Necessary in order to set up powerline shell
 PATH="/Users/rayting/Library/Python/3.10/bin:$PATH"
 
@@ -51,15 +60,16 @@ export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if ! shopt -oq posix; then
+    # Linux
     if [ -f /usr/share/bash-completion/bash_completion ]; then
         . /usr/share/bash-completion/bash_completion
     elif [ -f /etc/bash_completion.d ]; then
         . /etc/bash_completion.d
+    # Mac
+    elif [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]]; then
+        . /opt/homebrew/etc/profile.d/bash_completion.sh
     fi
 fi
-
-# User's global definitions
-export EDITOR=nvim
 
 # Script and executable dirs
 if [[ -e "$HOME/bin" ]]; then
@@ -92,4 +102,10 @@ if [[ -f ~/.py_autovenv ]]; then
     . ~/.py_autovenv
 fi
 
-export PATH
+# User's global definitions
+
+export EDITOR=nvim
+# Fucking mac
+export BASH_SILENCE_DEPRECATION_WARNING=1
+# I'm not sure if this is needed
+# export PATH
