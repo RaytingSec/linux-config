@@ -1,7 +1,7 @@
 # Common bash aliases
 
 # ls
-alias ll='ls --color -alhF --group-directories-first'
+alias ll='ls --color -alhF'
 alias l='ls --color -ACF'
 cl () { cd "$@" && l; }
 
@@ -11,9 +11,9 @@ alias gref='grep -Rin'
 alias grefa='grep -Rina'
 
 # find
-findname () { find . ! -readable -prune -o -iname "*$@*" -print; }
+# findname () { find . ! -readable -prune -o -iname "*$@*" -print; }
 # OS X alternative
-# findname () { find . -iname "*$@*"; }
+findname () { find . -iname "*$@*" -print; }
 
 # diff
 # alias diff='colordiff -u'  # useful for directories
@@ -37,7 +37,7 @@ alias pip-upgradeall="pip list --outdated | cut -d ' ' -f1 | xargs -n1 sudo pip3
 
 # Misc
 epoch () { date -u --date '@'$@; }  # Convert unix epoch timestamp
-alias open='xdg-open'
+# alias open='xdg-open'
 # alias update='sudo apt update && apt list --upgradable; alert'
 
 # Alias from Debian .bashrc
@@ -77,6 +77,25 @@ alias tmux-workspace="tmux new-window \; \
     split-window -v -t 1 \; \
     split-window -v -t 4 \; \
     select-pane -t 3 \;"
+
+# Create a 2x2 grid and run network connectivity tests
+alias tmux-conn-test="
+    tmux new-window \; \
+        split-window -h \; \
+        select-pane -t 1 \; \
+        split-window -v \; \
+        select-pane -t 3 \; \
+        split-window -v \; \
+        \
+        select-pane -t 1 \; \
+            send-keys 'ping 8.8.8.8' C-m \; \
+        select-pane -t 2 \; \
+            send-keys 'dig A google.com' C-m \; \
+        select-pane -t 3 \; \
+            send-keys 'curl -v https://httpbin.org/get' C-m \; \
+        select-pane -t 4 \; \
+            send-keys 'curl -v https://ifconfig.co/json | jq .' C-m \;
+"
 
 # Notes helpers
 
