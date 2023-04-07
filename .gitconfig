@@ -12,7 +12,7 @@
     ci = commit
     br = branch
     co = checkout
-    df = diff --color-words
+    df = diff --color-words='\\w+|.|[^[:space:]]'
     lg = log -p --abbrev-commit
     who = shortlog -s --
     poll-update = fetch --dry-run
