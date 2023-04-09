@@ -1,29 +1,41 @@
 [user]
     email = rayting@raydar.net
     name = raytingsec
+
+[core]
+    editor = nvim
+
 [push]
     default = simple
+    autoSetupRemote = true
+
 [merge]
     summary = true
-[core]
-    editor = vim
+
 [alias]
     st = status
     ci = commit
     br = branch
     co = checkout
+    # built in color-words
+    # df = diff --color-words
+    # Improved regex
     df = diff --color-words='\\w+|.|[^[:space:]]'
-    lg = log -p --abbrev-commit
+    # lg = log -p --abbrev-commit
+    lg = log -p --abbrev-commit --color-words='\\w+|.|[^[:space:]]'
     who = shortlog -s --
     poll-update = fetch --dry-run
     update = remote update --prune
     push-head = push origin HEAD
 
     # git log styles
-    log-graph = log --graph --abbrev-commit --decorate --date-order
+    #log-graph = log --graph --abbrev-commit --decorate --date-order
+    log-graph = log --graph --abbrev-commit --decorate
+
+    # Fancy git log
     # Source:
     # http://stackoverflow.com/questions/1838873/visualizing-branch-topology-in-git/34467298#34467298
-    log-flow = !"git log-flow-this" --all
-    log-flow-this = log --graph --abbrev-commit --decorate  --format=format:'%C(blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
+    log-flow = log --graph --abbrev-commit --decorate  --format=format:'%C(blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
+    log-flow-all = !"git log-flow" --all
+    log-flow-chrono = !"git log-flow-all" --date-order
     log-fc = log-flow-chrono
-    log-flow-chrono = !"git log-flow" --date-order
