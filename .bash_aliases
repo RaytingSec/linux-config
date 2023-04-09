@@ -1,8 +1,11 @@
 # Common bash aliases
 
 # ls
-alias ll='ls --color -alhF'
-alias l='ls --color -ACF'
+# alias ll='ls --color -alhF'
+# alias l='ls --color -ACF'
+# exa
+alias ll='exa -alhF'
+alias l='exa -aF'
 cl () { cd "$@" && l; }
 
 # grep
@@ -88,7 +91,8 @@ alias tmux-conn-test="
         split-window -v \; \
         \
         select-pane -t 1 \; \
-            send-keys 'ping 8.8.8.8' C-m \; \
+            send-keys 'ping -c1 8.8.8.8' C-m \; \
+            send-keys 'mtr -n -i 2 8.8.8.8' \; \
         select-pane -t 2 \; \
             send-keys 'dig A google.com' C-m \; \
         select-pane -t 3 \; \
@@ -96,6 +100,19 @@ alias tmux-conn-test="
         select-pane -t 4 \; \
             send-keys 'curl -v https://ifconfig.co/json | jq .' C-m \;
 "
+# Old conn test alias
+# alias tmux-conntest="
+#     tmux new-window -n 'connectivity-test' \; \
+#             send-keys 'dig google.com' C-m \; \
+#         split-window -h \; \
+#         select-pane -t 1 \; \
+#         split-window -v \; \
+#             send-keys 'ping -c1 8.8.8.8' C-m \; \
+#             send-keys 'mtr -n -i 2 8.8.8.8' \; \
+#         select-pane -t 3 \; \
+#             send-keys 'curl -v httpbin.org/get | jq' C-m \; \
+#             send-keys 'curl https://ifconfig.co/json | jq' \;
+# "
 
 # Notes helpers
 

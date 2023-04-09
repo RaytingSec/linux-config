@@ -1,49 +1,33 @@
-alias tmux-main="\
-    tmux new-session -t main \; \
-        rename-window 'mon' \; \
-            send-keys 'bpytop' C-m \; \
-        new-window \; rename-window 'log' \; \
-            send-keys 'journalctl -fn 50' C-m \; \
-        new-window \;
-"
 
 alias tmux-trader="\
     tmux new-session -t trader \; \
         rename-window 'project' \; \
-            send-keys 'cd ~/code/trader' C-m \; \
-            send-keys 'tree -L 2' C-m \; \
-            send-keys 'git status' C-m \; \
-            send-keys 'subl --project trader.sublime-project' C-m \; \
+                send-keys 'cd ~/code/trader' C-m \; \
+                send-keys 'tree -L 2' C-m \; \
+                send-keys 'git status' C-m \; \
+                send-keys 'subl --project trader.sublime-project' \; \
         new-window -n 'ssh' \; \
             \
-            split-window -v -p 25 \; \
+            split-window -v -p 40 \; \
             split-window -h \; \
             select-pane -t 1 \; \
             split-window -h \; \
             \
             select-pane -t 1 \; \
-                send-keys 'ssh trader-vm' C-m \; \
+                send-keys 'ssh fedora-dev' C-m \; \
+                send-keys 'cd ~/code/trader' C-m \; \
             select-pane -t 3 \; \
-                send-keys 'ssh -t trader-vm -- bpytop' C-m \; \
+                send-keys 'ssh -t fedora-dev -- bpytop' C-m \; \
+            \
             select-pane -t 2 \; \
                 send-keys 'ssh trader-psql' C-m \; \
             select-pane -t 4 \; \
                 send-keys 'ssh -t trader-psql -- bpytop' C-m \; \
 "
 
-alias tmux-conntest="
-    tmux new-window -n 'connectivity-test' \; \
-            send-keys 'dig google.com' C-m \; \
-        split-window -h \; \
-        select-pane -t 1 \; \
-        split-window -v \; \
-            send-keys 'ping -c1 8.8.8.8' C-m \; \
-            send-keys 'mtr -n -i 2 8.8.8.8' \; \
-        select-pane -t 3 \; \
-            send-keys 'curl -v httpbin.org/get | jq' C-m \; \
-            send-keys 'curl https://ifconfig.co/json | jq' \;
+alias tmux-foxnet="
+    tmux new-session -t foxnet \; \
+        rename-window 'local' \; \
+            send-keys 'cd ~/code/foxnet' C-m \; \
+            send-keys 'tree -L 2' C-m \; \
 "
-
-alias wg-up='sudo systemctl start wg-quick@wg0.service'
-alias wg-status='systemctl status wg-quick@wg0.service'
-alias wg-down='sudo systemctl stop wg-quick@wg0.service'
