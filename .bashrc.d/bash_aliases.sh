@@ -143,3 +143,22 @@ findproject () {
 cdproject () {
     cd ~/projects/${@}_*
 }
+
+# Noisy but has timestamp
+tcp-up-while () {
+    host=${1}
+    port=${2}
+    while :
+    do
+        sleep 1;
+        date -Iseconds;
+        nc -zv $host $port -w 0.5
+    done
+}
+tcp-up-watch () {
+    host=${1}
+    port=${2}
+    watch -d -n 2 -- "date -Iseconds; nc -zv ${host} ${port} -w 0.5;"
+}
+
+alias tcp-up="tcp-up-watch"  # Default to using `watch`
