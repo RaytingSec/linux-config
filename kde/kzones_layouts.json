@@ -7,116 +7,63 @@
                 "x": 0,
                 "y": 0,
                 "height": 50,
-                "width": 30
+                "width": 32
             },
             {
                 "name": "left lower",
                 "x": 0,
                 "y": 50,
                 "height": 50,
-                "width": 30
+                "width": 32
             },
             {
                 "name": "center upper",
-                "x": 30,
+                "x": 32,
                 "y": 0,
                 "height": 50,
-                "width": 40
+                "width": 36
             },
             {
                 "name": "center lower",
-                "x": 30,
+                "x": 32,
                 "y": 50,
                 "height": 50,
-                "width": 40
+                "width": 36
             },
             {
                 "name": "right upper",
-                "x": 70,
+                "x": 68,
                 "y": 0,
                 "height": 50,
-                "width": 30
+                "width": 32
             },
             {
                 "name": "right lower",
-                "x": 70,
+                "x": 68,
                 "y": 50,
                 "height": 50,
-                "width": 30
+                "width": 32
             },
             {
                 "name": "left column",
                 "x": 0,
                 "y": 0,
                 "height": 100,
-                "width": 30
+                "width": 32
             },
             {
                 "name": "center column",
-                "x": 30,
+                "x": 32,
                 "y": 0,
                 "height": 100,
-                "width": 40
+                "width": 36
             },
             {
                 "name": "right column",
-                "x": 70,
+                "x": 68,
                 "y": 0,
                 "height": 100,
-                "width": 30
-            }
-        ]
-    },
-    {
-        "name": "Priority Grid",
-        "padding": 0,
-        "zones": [
-            {
-                "x": 0,
-                "y": 0,
-                "height": 100,
-                "width": 25
-            },
-            {
-                "x": 25,
-                "y": 0,
-                "height": 100,
-                "width": 50
-            },
-            {
-                "x": 75,
-                "y": 0,
-                "height": 100,
-                "width": 25
-            }
-        ]
-    },
-    {
-        "name": "Quadrant Grid",
-        "zones": [
-            {
-                "x": 0,
-                "y": 0,
-                "height": 50,
-                "width": 50
-            },
-            {
-                "x": 0,
-                "y": 50,
-                "height": 50,
-                "width": 50
-            },
-            {
-                "x": 50,
-                "y": 50,
-                "height": 50,
-                "width": 50
-            },
-            {
-                "x": 50,
-                "y": 0,
-                "height": 50,
-                "width": 50
+                "width": 32
             }
         ]
     }
