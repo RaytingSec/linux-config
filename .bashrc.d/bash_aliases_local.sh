@@ -86,3 +86,15 @@ alias tmux-foxnet="
                 send-keys 'ssh proxmox' C-m \; \
                 send-keys 'bpytop' C-m \;
 "
+
+subl-trading () {
+    subl_project_file=~/Documents/Finance/trading-journal/trading-journal.sublime-project
+    # journal_template=~/Documents/Finance/trading-journal/template.md  # need to check if file exists already and avoid overwriting
+    today_journal_file=~/Documents/Finance/trading-journal/`date -I`.md
+    today_trades_file=~/Documents/Finance/thinkorswim/`date -I`_simulated-trades.txt
+
+    subl \
+        --project ${subl_project_file} \
+        ${today_journal_file} \
+        ${today_trades_file} \
+}
