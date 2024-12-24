@@ -143,6 +143,11 @@ findproject () {
 cdproject () {
     cd ~/projects/${@}_*
 }
+# Open project matching current working directory
+subl-project () {
+    sublime_project_file=$(find ./ -maxdepth 1 -name "*.sublime-project" -type f | head -1)
+    subl --project $sublime_project_file
+}
 
 # Noisy but has timestamp
 tcp-up-while () {
@@ -158,7 +163,7 @@ tcp-up-while () {
 tcp-up-watch () {
     host=${1}
     port=${2}
-    watch -d -n 2 -- "date -Iseconds; nc -zv ${host} ${port} -w 0.5;"
+    watch -d -n 1 -- "date -Iseconds; nc -zv ${host} ${port} -w 0.5;"
 }
 
 alias tcp-up="tcp-up-watch"  # Default to using `watch`

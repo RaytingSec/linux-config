@@ -96,5 +96,39 @@ subl-trading () {
     subl \
         --project ${subl_project_file} \
         ${today_journal_file} \
-        ${today_trades_file} \
+        ${today_trades_file}
+}
+
+create-uv-project () {
+    projectname=$1
+
+    uv init ${projectname}
+    cd ${projectname}
+    uv sync
+
+    projectfile="${projectname}.sublime-project"
+    projectdir=$(pwd)
+    cat <<EOT | tee ${projectfile}
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "python_interpreter": "${projectdir}/.venv/bin/python"
+    },
+    "build_systems": [
+        {
+            "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+            "name": "project venv",
+            "selector": "source.python",
+            "shell_cmd": "${projectdir}/.venv/bin/python -u \"\$file\""
+        },
+    ],
+}
+EOT
+    subl --project ${projectfile}
+    git add ./
+    git ci -m "uv init and sublime project"
 }

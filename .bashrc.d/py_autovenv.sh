@@ -76,4 +76,5 @@ _venv_name() {
     printf $(basename $(dirname $1))
 }
 
-export PROMPT_COMMAND="venv_auto; $PROMPT_COMMAND"
+# venv switching is managed by `uv`
+# export PROMPT_COMMAND="venv_auto; $PROMPT_COMMAND"
