@@ -1,0 +1,22 @@
+# ghostty +list-themes
+theme = niji
+
+font-family = "Hack"
+font-size = 11
+# selection-invert-fg-bg = true
+
+cursor-style = block
+cursor-style-blink = true
+
+background-opacity = 0.95
+background-blur-radius = 20
+
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 0.5
+# macos-titlebar-style = transparent
+window-padding-x = 0
+window-padding-y = 0
+window-height = 40
+window-width = 120
+# window-decoration = false
+window-theme = ghostty
