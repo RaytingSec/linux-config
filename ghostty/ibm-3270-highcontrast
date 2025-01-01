@@ -1,0 +1,25 @@
+palette = 0=#000000
+palette = 1=#FF0000
+palette = 2=#00FF00
+palette = 3=#FFFF00
+palette = 4=#00BFFF
+palette = 5=#FFC0CB
+palette = 6=#40E0D0
+palette = 7=#BEBEBE
+palette = 8=#414141
+palette = 9=#FFA500
+palette = 10=#98FB98
+palette = 11=#FFFF00
+palette = 12=#0000CD
+palette = 13=#A020F0
+palette = 14=#AEEEEE
+palette = 15=#FFFFFF
+
+background = 000000
+foreground = FDFDFD
+
+cursor-color = FDFDFD
+
+# This theme is an offline persistent backup from upstream repo:
+# https://github.com/Gogh-Co/Gogh/tree/master/themes/Ibm 3270 (High Contrast).yml
+# https://gitlab.gnome.org/chergert/ptyxis/-/blob/main/src/palettes/Ibm%203270%20(High%20Contrast).palette
