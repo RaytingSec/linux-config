@@ -203,3 +203,19 @@ EOT
     git add ./
     git ci -m "uv init and sublime project"
 }
+
+alias lint-readme='py ~/py/markdown_lint.py ./readme.md'
+
+open-workspace () {
+    readme_path="./readme.md"
+
+    echo "Opening readme doc and linting it ..."
+    if [ ! -f "$readme_path" ]; then
+        establish_readme.sh
+    fi
+    python ~/py/markdown_lint.py $readme_path
+    subl -n ./ $readme_path
+
+    echo "Opening file browser ..."
+    open .
+}
