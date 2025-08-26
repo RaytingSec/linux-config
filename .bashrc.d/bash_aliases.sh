@@ -40,7 +40,6 @@ alias py='python'
 alias py3='python3'
 alias ipy='ipython'
 alias gpp='g++ -std=c++11'
-alias pip-upgradeall="pip list --outdated | cut -d ' ' -f1 | xargs -n1 sudo pip3 install -U"
 
 # Misc
 epoch () { date -u --date '@'$@; }  # Convert unix epoch timestamp
