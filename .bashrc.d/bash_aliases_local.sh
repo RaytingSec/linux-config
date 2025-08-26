@@ -1,3 +1,30 @@
+tmux-monitor-host () {
+    targethost="$1"
+    # Pane Layout
+    #  - two columns
+    #  - three rows on left side
+    #  - two rows on right side
+    tmux new-window -n "mon-${targethost}" \; \
+            split-window -h \; \
+            select-pane -t 1 \; \
+            split-pane -v \; \
+            select-pane -t 1 \; \
+            split-pane -v \; \
+            select-pane -t 4 \; \
+            split-pane -v \; \
+            \
+            select-pane -t 1 \; \
+                send-keys "ssh -t ${targethost} -- iotop -o -d 2" C-m \; \
+            select-pane -t 2 \; \
+                send-keys "ssh -t ${targethost} -- zpool iostat -v 2" C-m \; \
+            select-pane -t 3 \; \
+                send-keys "ssh -t ${targethost} -- journalctl -fn 50" C-m \; \
+            select-pane -t 4 \; \
+                send-keys "ssh -t ${targethost} -- btop" C-m \; \
+            select-pane -t 5 \; \
+                send-keys "ssh -t ${targethost}" C-m \;
+}
+
 
 alias tmux-trader="\
     tmux new-session -t trader \; \
@@ -73,18 +100,62 @@ alias tmux-foxnet="
             send-keys 'cd ~/code/foxnet' C-m \; \
             send-keys 'tree -L 2' C-m \; \
         \
-        new-window -n 'substrate' \; \
+        new-window -n 'substrate-proxmox' \; \
             split-window -h \; \
             select-pane -t 1 \; \
             split-pane -v \; \
+            select-pane -t 1 \; \
+            split-pane -v \; \
+            select-pane -t 4 \; \
+            split-pane -v \; \
             \
             select-pane -t 1 \; \
-                send-keys 'ssh -t truenas -- zpool iostat -v vol1 2' C-m \; \
+                send-keys 'ssh -t proxmox -- iotop -o -d 2' C-m \; \
             select-pane -t 2 \; \
-                send-keys 'ssh -t truenas -- iostat -x da{0,1,2,3,4,5,6,7} nvd0 2' C-m \; \
+                send-keys 'ssh -t proxmox -- zpool iostat -v 2' C-m \; \
             select-pane -t 3 \; \
+                send-keys 'ssh -t proxmox -- journalctl -fn 50' C-m \; \
+            select-pane -t 4 \; \
+                send-keys 'ssh -t proxmox -- btop' C-m \; \
+            select-pane -t 5 \; \
                 send-keys 'ssh proxmox' C-m \; \
-                send-keys 'bpytop' C-m \;
+       new-window -n 'substrate-truenas' \; \
+            split-window -h \; \
+            select-pane -t 1 \; \
+            split-pane -v \; \
+            select-pane -t 1 \; \
+            split-pane -v \; \
+            select-pane -t 4 \; \
+            split-pane -v \; \
+            \
+            select-pane -t 1 \; \
+                send-keys 'ssh -t truenas -- iostat -p sd{b,c,d,e,f,g,h,i,j,k} 2' C-m \; \
+            select-pane -t 2 \; \
+                send-keys 'ssh -t truenas -- /sbin/zpool iostat -v 2' C-m \; \
+            select-pane -t 3 \; \
+                send-keys 'ssh -t truenas -- sudo journalctl -fn 50' C-m \; \
+            select-pane -t 4 \; \
+                send-keys 'ssh -t truenas -- htop' C-m \; \
+            select-pane -t 5 \; \
+                send-keys 'ssh truenas' C-m \;
+"
+
+# pytest shorthand
+# in depth analysis
+alias pytest-v="
+    pytest \
+        --log-cli-level=DEBUG \
+        --log-level=INFO \
+        --showlocals \
+"
+# pdb
+alias pytest-pdb="
+    pytest \
+        --log-cli-level=DEBUG \
+        --log-level=INFO \
+        --showlocals \
+        --pdb \
+        --pdbcls=IPython.terminal.debugger:TerminalPdb \
 "
 
 subl-trading () {
