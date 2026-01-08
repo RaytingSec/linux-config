@@ -4,6 +4,6 @@ ssh_config
 vlc-qt-interface.conf
 crypttab
 fstab
-solaar_config.json
+solaar_config.yaml
 nvidia/
 keepassxc.ini
