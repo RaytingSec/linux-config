@@ -9,7 +9,7 @@ set breakindent
 " Line Highlighting
 " https://vim.fandom.com/wiki/Highlight_current_line
 set cursorline
-"set cursorcolumn
+" set cursorcolumn  " column is nice but gets distracting
 hi CursorLine   cterm=NONE ctermbg=darkgrey " Sets cursor line and column to dark grey and remove underlining
 "hi CursorColumn cterm=NONE ctermbg=darkgrey
 "nnoremap <Leader>c :set cursorline! cursorcolumn!<CR> " Don't know what this does honestly
@@ -95,3 +95,15 @@ colorscheme vim-monokai-tasty
 " vim-airline
 let g:airline_theme='monokai_tasty'
 let g:airline_powerline_fonts = 1
+
+" smear-cursor
+" https://github.com/sphamba/smear-cursor.nvim
+call plug#begin()
+Plug 'sphamba/smear-cursor.nvim'
+call plug#end()
+lua require('smear_cursor').enabled = true
+" Manually set smear color to prevent GUI from using syntax highlighting or
+" other UI colors to alter cursor color
+lua require('smear_cursor').setup({
+    \cursor_color = '#d3cdc3',
+\})
