@@ -336,6 +336,8 @@ tmux_conf_theme_right_separator_sub='\uE0B3'  #   PowerlineSymbols.otf font, see
 tmux_conf_copy_to_os_clipboard=true
 
 # Status bar customizations
+# Override left status and exclude uptime
+tmux_conf_theme_status_left=" ❐ #S "
 tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #{?battery_status, #{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , %a %b %d , %R %Z , #(TZ="UTC" date "+%%H:%%M %%Z") | #{username}#{root} | #{hostname} '
 
 # increase history size

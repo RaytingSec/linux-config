@@ -1,5 +1,6 @@
 [user]
-    email = rayting@raydar.net
+    # email = rayting@raydar.net
+    email = 8620539+RaytingSec@users.noreply.github.com
     name = raytingsec
 
 [core]
@@ -27,6 +28,7 @@
     poll-update = fetch --dry-run
     update = remote update --prune
     push-head = push origin HEAD
+    commit-message-draft = commit -eF commit-message-draft.md
 
     # git log styles
     #log-graph = log --graph --abbrev-commit --decorate --date-order
