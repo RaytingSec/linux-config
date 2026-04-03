@@ -7,3 +7,6 @@ fstab
 solaar_config.yaml
 nvidia/
 keepassxc.ini
+mount.sh
+sudoers.d/
+old/*
