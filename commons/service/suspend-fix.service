@@ -1,4 +1,5 @@
-# cp suspend-fix.service /etc/systemd/system && systemctl enable --now suspend-fix.service
+# cp suspend-fix.service /etc/systemd/system/ && systemctl enable --now suspend-fix.service
+
 [Unit]
 Description=Disable suspend wakeup interrupts except for LID
 
